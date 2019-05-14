@@ -175,6 +175,18 @@ body.image{
 .form .message a:hover{
     color: rgb(255, 255, 255);
   }
+  /* signin page */
+  .signin-page{
+    padding-top: 10%;
+}
+#form{
+  position: relative;
+  background: rgba(1, 6, 51, 0.479);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+}
 
 /* footer */
 #footer{
@@ -241,6 +253,13 @@ body.image{
     background-size: 515%;
     background-position: center;
 }
+
+ /* signin page */
+ .signin-page{
+    padding-top: 20%;
+}
+
+/* footer */
     footer{
         padding-top: 35%;
     }
