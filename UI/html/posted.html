@@ -21,9 +21,9 @@
       <div id="myNav" class="overlay">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
           <div class="overlay-content">
-            <a href="./home.html" class="active">Home</a>
+            <a href="./home.html">Home</a>
             <a href="./post.html">Post an Ad</a>
-            <a href="./posted.html">Posted ads</a>
+            <a href="./posted.html" class="active">Posted ads</a>
             <a href="./sold.html">Purchase</a>
             <a href="./sold.html">Sold Cars</a>
             <a href="./unsold.html">Unsold Cars</a>
@@ -35,9 +35,9 @@
     <!-- Left-aligned links (default) -->
         <div class="navigation">
           <div class="topnav-left">
-            <a href="./home.html" class="active">Home</a>
+            <a href="./home.html">Home</a>
             <a href="./post.html">Post an Ad</a>
-            <a href="./posted.html">Posted ads</a>
+            <a href="./posted.html" class="active">Posted ads</a>
             <a href="./sold.html">Purchase</a>
             <a href="./sold.html">Sold Cars</a>
             <a href="./unsold.html">Unsold Cars</a>
@@ -53,65 +53,46 @@
 
   <!-- Featured Cars -->
   <section id="featured-cars">
-    <div class="container">
-      <h2>Featured  New Cars for sale</h2>
-      <div class="new-cars-container">
-        <div class="section">
-        <div class="card">
-          <a href="./specificCar.html">
-          <p>2019 Toyota Camry</p>
-          <img src="../Assets/camery.png" alt="camery" style="width: 50%;">
-          <div class="featured-cars ">
-            <div class="category">2019 Toyota Camry</div>
-            <div><small>Price: $ 25,200</small></div>
-            <div class="category">Available</div>
-          </div>
-          </a>
-        </div>
-        <div class="card">
-          <a href="./specificCar.html">
-          <p>2019 Hyundai Elantra Value Edition Sedan</p>
-          <img src="../Assets/hyundai elantra 2019.png" alt="hyundai" style="width: 40%;">
-          <div class="featured-cars">
-            <div class="category">2019 Hyundai Elantra</div>
-            <div><small>Price: $ 22,700</small></div>
-            <div class="category">Available</div>
-          </div>
-          </a>
-        </div>
-        </div>
-        <div class="section">
-        <div class="card">
-          <a href="./specificCar.html">
-          <p>2019 Jeep Grand Cherokee Altitude</p>
-          <img src="../Assets/jeep grand cheroke.png" alt="jeep" style="width: 40%;">
-          <div class="featured-cars ">
-            <div class="category">2019 Jeep Grand Cherokee Altitude</div>
-            <div><small>Price: $ 26,900</small></div>
-            <div class="category">Available</div>
-          </div>
-          </a>
-        </div>
-        <div class="card">
-          <a href="./specificCar.html">
-            <p>2019 Vitara Suzuki</p>
-            <img src="../Assets/vitara suzuki.png" alt="jeep" style="width: 49%;">
-            <div class="featured-cars ">
-              <div class="category">2019 Vitara Suzuki</div>
-              <div><small>Price: $ 20,000</small></div>
-              <div class="category">Available</div>
-            </div>
-            </a>
-          </div>
-          </div>
-      </div>
-      <hr>
-      <h2>Featured  Old Cars for sale</h2>
+      <div class="container">
       <div class="old-cars">
       <div class="old-cars-container">
         <a href="./specificCar2.html">
+        <div id="sold-car1">
+          <img src="../Assets/camery.png" alt="camery" style="width: 77%; background-color: white;">
+          <i class="fas fa-check-square"></i>
+        </div>
+        <div class="category">2019 Toyota Camry</div>
+        <div><small>Price: $ 40,000</small></div>
+        <div class="category" style="color: rgb(0, 100, 0); font-weight: bold">Sold</div>
+        </a>
+      </div>
+      <div class="old-cars-container">
+        <a href="./specificCar2.html">
+        <div id="sold-car2">
+          <img src="../Assets/hyundai elantra 2019.png" alt="chevrolet" style="width: 77%; background-color: white;">
+          <i class="fas fa-check-square"></i>
+        </div>
+        <div class="category">Hyundai elantra 2019</div>
+        <div><small>Price: $ 40,000</small></div>
+        <div class="category" style="color: rgb(0, 100, 0); font-weight: bold">Sold</div>
+        </a>
+      </div>
+      <div class="old-cars-container">
+        <a href="./specificCar2.html">
+        <div id="sold-car3">
+          <img src="../Assets/Mercedes-Benz S Class .jpg" alt="mercedenz" style="width: 70%">
+          <i class="fas fa-check-square"></i>
+        </div>
+        <div class="category">Mercedes-Benz S Class </div>
+        <div><small>Price: $ 40,000</small></div>
+        <div class="category" style="color: rgb(0, 100, 0); font-weight: bold;">Sold</div>
+        </a>
+       </div>
+    </div>
+    <div class="old-cars">
+      <div class="old-cars-container">
+        <a href="./specificCar2.html">
         <img src="../Assets/chevrolet.jpg" alt="chevrolet" style="width: 70%">
-        <h3>2019 Chevrolet Silverado</h3>
         <div class="category">2019 Chevrolet Silverado</div>
         <div><small>Price: $ 40,000</small></div>
         <div class="category">Available</div>
@@ -120,7 +101,6 @@
       <div class="old-cars-container">
         <a href="./specificCar2.html">
         <img src="../Assets/2013 Ford Fusion.jpg" alt="ford" style="width: 70%">
-        <h3>2013 Ford Fusion</h3>
         <div class="category">2013 Ford Fusion</div>
         <div><small>Price: $ 40,000</small></div>
         <div class="category">Available</div>
@@ -129,7 +109,32 @@
       <div class="old-cars-container">
         <a href="./specificCar2.html">
         <img src="../Assets/Mercedes-Benz S Class .jpg" alt="mercedenz" style="width: 70%">
-        <h3>Mercedes-Benz S Class </h3>
+        <div class="category">Mercedes-Benz S Class </div>
+        <div><small>Price: $ 40,000</small></div>
+        <div class="category">Available</div>
+        </a>
+       </div>
+    </div>
+    <div class="old-cars">
+      <div class="old-cars-container">
+        <a href="./specificCar2.html">
+        <img src="../Assets/chevrolet.jpg" alt="chevrolet" style="width: 70%">
+        <div class="category">2019 Chevrolet Silverado</div>
+        <div><small>Price: $ 40,000</small></div>
+        <div class="category">Available</div>
+        </a>
+      </div>
+      <div class="old-cars-container">
+        <a href="./specificCar2.html">
+        <img src="../Assets/2013 Ford Fusion.jpg" alt="ford" style="width: 70%">
+        <div class="category">2013 Ford Fusion</div>
+        <div><small>Price: $ 40,000</small></div>
+        <div class="category">Available</div>
+        </a>
+      </div>
+      <div class="old-cars-container">
+        <a href="./specificCar2.html">
+        <img src="../Assets/Mercedes-Benz S Class .jpg" alt="mercedenz" style="width: 70%">
         <div class="category">Mercedes-Benz S Class </div>
         <div><small>Price: $ 40,000</small></div>
         <div class="category">Available</div>
@@ -139,7 +144,7 @@
     </div>
   </section>
 
-  <footer id="footer" style="color: black; padding-top: 170px">
+  <footer class="footer" style="color: black;position: absolute; bottom: -480px; left: 33%;">
     <p>AutoMart, Andela Developer Challenge &copy; Bootcamp Cycle7</p>
   </footer>
   <script src="../js/script.js"></script>
