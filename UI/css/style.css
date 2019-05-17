@@ -443,6 +443,26 @@ table {
   .report-button:hover{
     background-color: #aa0000;
   }
+
+  /* posted ads */
+  #sold-car1 .fa-check-square{
+    position: absolute;
+    left: 410px;
+    font-size: 30px;
+    color: #037c07;
+  }
+  #sold-car2 .fa-check-square{
+    position: absolute;
+    left: 810px;
+    font-size: 30px;
+    color: #037c07;
+  }
+  #sold-car3 .fa-check-square{
+    position: absolute;
+    left: 1170px;
+    font-size: 30px;
+    color: #037c07;
+  }
   
 
 /* footer */
@@ -553,8 +573,27 @@ table {
   width: 100%;
   margin: 0;
 }
+/* posted cars */
+#sold-car1 .fa-check-square{
+  font-size: 15px;
+  position: absolute;
+  left: 121px;
+}
+#sold-car2 .fa-check-square{
+  font-size: 15px;
+  position: absolute;
+  left: 240px;
+}
+#sold-car3 .fa-check-square{
+  font-size: 15px;
+  position: absolute;
+  left: 350px;
+}
 /* footer */
     footer{
         padding-top: 35%;
+    }
+    .footer{
+      display: none;
     }
 }
