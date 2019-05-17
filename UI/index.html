@@ -7,19 +7,27 @@
      <meta name="keywords" content="Auto Mart">
      <meta name="author" content="Raymond Gakwaya">
    <title>Auto Mart | homepage</title>
-   <link rel="stylesheet" href="./css/index.css">
+   <link rel="stylesheet" href="./css/style.css">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   </head>
   <body class= "body">
       <header id="header">
           <div class = "logo">
               <a href="index.html">Auto<span>Mart</span></a>
           </div>
-          <div class="nav">
+          <div class="nav" >
+              <div id="bar-icon" class="menu-bar"><i class="fas fa-bars" onclick="menubar()"></i></div>
               <ul class="home-buttons">
                 <li><a href="./html/signup.html">Signup</a></li>
                 <li><a href="./html/signin.html">Signin</a></li>
-                <li><a href="./html/admin.html">Admin</a></li>
               </ul>
+          </div>
+          <div class="side-bar" id="menu-bar" >
+              <ul class="side-menu">
+                <li><a href="./html/signup.html">Signup</a></li>
+                <li><a href="./html/signin.html">Signin</a></li>
+              </ul>
+              <a href="javascript:void(0)" onclick="away()" class="close">&times;</a>
           </div>
       </header>
       
@@ -36,5 +44,6 @@
     <footer id="footer">
       <p>AutoMart, Andela Developer Challenge &copy; Bootcamp Cycle7</p>
     </footer>
+    <script src="./js/script.js"></script>
   </body>
 </html>
