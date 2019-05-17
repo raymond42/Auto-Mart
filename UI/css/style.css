@@ -187,6 +187,144 @@ body.image{
   padding: 45px;
   text-align: center;
 }
+/* home */  
+.topnav {
+    overflow: hidden;
+    background-color: rgb(36, 88, 136);
+    border-bottom: green 2px solid;
+  }
+  
+  .topnav a {
+    font-family: Arial, Helvetica, sans-serif;
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  .topnav a.active {
+    color: rgb(18, 179, 18);
+  }
+  .topnav-right {
+    float: right;
+  }
+  .nav{
+    display: block;
+  }
+  .nav a{
+      margin-left: 60px;
+  }
+  .navigation a:hover{
+    color: rgb(18, 179, 18);
+  }
+  .menu-bar{
+   
+    position: absolute;
+    top: 0;
+    right: 10px;
+    color: rgb(255, 255, 255);
+    display: none;
+    font-size: 200%;
+  }
+.side-bar{
+  display: none;
+}
+.side-nav{
+  display: none;
+}
+
+.side-menu li{
+  list-style: none;
+  margin: 5px 20px auto -30px;
+  padding: 3px;
+}
+.side-menu li a{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  padding: 8px;
+}
+.side-menu li a:hover{
+  border: 1px green solid;
+}
+.overlay {
+  display: block;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 2, 14, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content a{
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+.close{
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 2px;
+}
+.card{
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  width: 40%;
+  height: auto;
+  margin-top: 20px;
+}
+.card a{
+  text-decoration: none;
+  color: black;
+}
+.card p{
+  padding-left: 10px;
+}
+  .card, .container h2{
+    margin-left: 10%;
+  }
+  .section{
+    display: flex;
+    padding-right: 50px;
+  }
+  .featured-cars{
+    float: right;
+    padding-top: 15%;
+    padding-right: 10px;
+  }
+  .old-cars{
+    float: left;
+    margin-left: 10%;
+    display: flex;
+  }
+  .old-cars-container{
+    padding-top: 10px;
+  }
 
 /* footer */
 #footer{
@@ -213,19 +351,33 @@ body.image{
     p{
         font-size: 80%;
     }
-    header{
-        position: absolute;
-    }
     .logo{
         font-size: 100%;
     }
-    .menu-icon{
-        display: inline-block;
+    .menu-bar{
+      display: block;
     }
-   
+    .side-bar{
+      display: none;
+      width: 20%;
+      position: absolute;
+      top: 4px;
+      right: 12px;
+      background-color: rgba(10, 50, 102, 0.198);
+    }
+    .side-nav{
+      width: auto;
+      position: absolute;
+      top: 4px;
+      right: 12px;
+      background-color: rgba(10, 50, 102, 0.198);
+    }
     .welcome a{
         letter-spacing: 2px;
         margin-bottom: 10%;
+    }
+    .home-buttons{
+      display: none;
     }
     .home-buttons li{
     margin-top: 10%;
@@ -258,7 +410,19 @@ body.image{
  .signin-page{
     padding-top: 20%;
 }
-
+/* home */
+.overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+  .old-cars-container{
+    width: 30%;
+  }
+.navigation{
+  display: none;
+}
 /* footer */
     footer{
         padding-top: 35%;
