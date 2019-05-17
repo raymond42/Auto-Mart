@@ -325,6 +325,125 @@ body.image{
   .old-cars-container{
     padding-top: 10px;
   }
+  .old-cars-container a{
+    text-decoration: none;
+    color: black;
+  }
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+/* specific car */
+table {
+    margin-left: 10%;
+    padding: 0;
+    margin-top: 15px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 80%;
+    background-color: rgb(255, 255, 255);
+  }
+  #table{
+      width: 100%;
+  }
+  th, td {
+  text-align: left;
+  padding: 16px;
+}
+  .fa-check {
+    color: green;
+  }
+  .unverified{
+      font-weight: bold;
+  }
+  tr{
+    border-bottom: 1px solid #ddd;
+  }
+   .table tr:hover{
+    background-color: #f1f1f1f6;
+  }
+  tr.table-heading{
+      background-color: #f1f1f1;
+  }
+  .details{
+    width: 60%;
+    background-color: rgba(255, 255, 255, 0.76);
+    margin-left: 21%;
+    margin-top: 5%;
+    border: #f1f1f1f6;
+    border-radius: 1%;
+  }
+  .details td{
+    text-align: left;
+    font-size: 85%;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+  }
+  .balance{
+    color: red;
+  }
+  tr.lines{
+    border-bottom: none;
+    color: rgb(0, 0, 0);
+    background-color: rgba(5, 3, 107, 0.15);
+  }
+  tr.no-lines{
+    color: rgb(0, 0, 0);
+    background-color: rgba(4, 6, 107, 0.15);
+  }
+  td button{
+    padding: 5px 5px;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 3px #999;
+    margin-right: 7px;
+  }
+  td button:hover{
+    background-color: #037c07;
+  }
+  td button a{
+    text-decoration: none;
+    color: white;
+  }
+  .report-button{
+    background-color: rgba(189, 11, 11, 0.863);
+  }
+  .report-button:hover{
+    background-color: #aa0000;
+  }
+  
 
 /* footer */
 #footer{
@@ -402,8 +521,9 @@ body.image{
   }
   body.image{
     background-repeat: no-repeat;
-    background-size: 515%;
+    background-size: 610%;
     background-position: center;
+    font-size: 10px;
 }
 
  /* signin page */
@@ -422,6 +542,16 @@ body.image{
   }
 .navigation{
   display: none;
+}
+
+/* specific car */
+.car-image{
+  width: 100%;
+  margin-left: -33px;
+}
+.details{
+  width: 100%;
+  margin: 0;
 }
 /* footer */
     footer{
