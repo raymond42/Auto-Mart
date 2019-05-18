@@ -24,7 +24,7 @@
             <a href="./home.html">Home</a>
             <a href="./post.html">Post a car Ad</a>
             <a href="./posted.html">Posted car ads</a>
-            <a href="./purchase.html" class="active">Purchase order</a>
+            <a href="./purchase.html" class="active">Purchase orders</a>
             <a href="./unsold.html">Unsold Cars</a>
             <a href="./signin.html">Logout</a>
           </div>
@@ -37,7 +37,7 @@
             <a href="./home.html">Home</a>
             <a href="./post.html">Post a car Ad</a>
             <a href="./posted.html">Posted car ads</a>
-            <a href="./purchase.html" class="active">Purchase order</a>
+            <a href="./purchase.html" class="active">Purchase orders</a>
             <a href="./unsold.html">Unsold Cars</a>
           </div>
     
@@ -51,74 +51,113 @@
 
   <!-- Featured Cars -->
   <section>
-  <div id="container" class="container" style="width: 50%; position: absolute; left: 300px; top: 100px;">
-  <form class="post-form">
-      <div class="row">
-      <div class="title">
-        <label>Buyer</label>
-      </div>
-      <div class="placeholder">
-        <input type="text" placeholder="Names..">
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="title">
-        <label>Car Model</label>
-      </div>
-      <div class="placeholder">
-        <input type="text" placeholder="Model..">
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="title">
-        <label>State</label>
-      </div>
-      <div class="placeholder">
-        <select id="state">
-          <option value="new">New</option>
-          <option value="use">Used</option>
-        </select>
-      </div>
-    </div>
-
-      <div class="row">
-       <div class="title">
-        <label>Body type</label>
-       </div>
-      <div class="placeholder">
-        <select id="body-type">
-          <option>Body type</option>
-          <option>Hatchback</option>
-          <option>Sedan</option>
-          <option>Crossover-USV</option>
-          <option>Single cab bakkie</option>
-          <option>Double cab bakkie</option>
-          <option>Multi purpose vehicle</option>
-          <option>Convertible</option>
-          <option>Extended cab bakkie</option>
-        </select>
-      </div>
+    <!-- ordered list -->
+    <div id="order">
+      <div class="row" style="padding-right: 5px; padding-top: 5px;">
+        <a href="./order.html">
+          <input type="submit" value="New Purchase Order">
+        </a>
       </div>
 
-       <div class="row">
-       <div class="title">
-        <label>Price offered</label>
-       </div>
-      <div class="placeholder">
-        <input type="text" placeholder="Price offered.."><br><br>
-      </div>
-      </div>
+      <div id="clients-table">
+      <table class="table">
+        <tr class="table-heading">
+            <th>No</th>
+            <th>Buyer</th>
+            <th>Car Model</th>
+            <th>State</th>
+            <th>Body Type</th>
+            <th>Price offered</th>
+            <th>Status</th>
 
-    <div class="row">
-      <input type="submit" value="ORDER">
+        </tr>
+        <tr>
+            <td><a href="#">01</a></td>
+            <td><a href="#">Julia Gakwaya</a></a></td>
+            <td><a href="#">2019 Toyota Camry</a></td>
+            <td><a href="#">New</a></td>
+            <td><a href="#">Sedan</a></td>
+            <td><a href="#">$ 38,000</a></td>
+            <td><a href="#">Pending...</a></td>
+        </tr>
+        <tr>
+            <td><a href="#">02</a></td>
+            <td><a href="#">Christian Brown</a></a></td>
+            <td><a href="#">2019 Jeep Grand Cherokee</a></td>
+            <td><a href="#">Used</a></td>
+            <td><a href="#">Crossover-USV</a></td>
+            <td><a href="#">$ 30,000</a></td>
+            <td class="accepted"><a href="#">Accepted</a></td>
+        </tr>
+        <tr>
+            <td><a href="#">03</a></td>
+            <td><a href="#">Joseph John</a></a></td>
+            <td><a href="#">2017 Range Rover</a></td>
+            <td><a href="#">Used</a></td>
+            <td><a href="#">Crossover-USV</a></td>
+            <td><a href="#">$ 60,000</a></td>
+            <td class="rejected"><a href="#">Rejected</a></td>
+        </tr>
+        <tr>
+            <td><a href="#">04</a></td>
+            <td><a href="#">Anne Marie</a></a></td>
+            <td><a href="#">2019 Chevrolet Silverado</a></td>
+            <td><a href="#">New</a></td>
+            <td><a href="#">Sedan</a></td>
+            <td><a href="#">$ 40,000</a></td>
+            <td><a href="#">Pending...</a></td>
+        </tr>
+        <tr>
+            <td><a href="#">05</a></td>
+            <td><a href="#">Billie Eillish</a></a></td>
+            <td><a href="#">2019 V8</a></td>
+            <td><a href="#">New</a></td>
+            <td><a href="#">Crossover-USV</a></td>
+            <td><a href="#">$ 100,000</a></td>
+            <td><a href="#">Pending...</a></td>
+        </tr>
+        <tr>
+            <td><a href="#">06</a></td>
+            <td><a href="#">Khalid Location</a></a></td>
+            <td><a href="#">2019 Toyota camery</a></td>
+            <td><a href="#">New</a></td>
+            <td><a href="#">Sedan</a></td>
+            <td><a href="#">$ 40,000</a></td>
+            <td><a href="#">Pending...</a></td>
+       </tr>
+        <tr>
+            <td><a href="#">07</a></td>
+            <td><a href="#">Raymond Usher</a></a></td>
+            <td><a href="#">Chevrolet</a></td>
+            <td><a href="#">Used</a></td>
+            <td><a href="#">Sedan</a></td>
+            <td><a href="#">$ 30,000</a></td>
+            <td><a href="#">Pending...</a></td>
+        </tr>
+        <tr>
+            <td><a href="#">08</a></td>
+            <td><a href="#">Audrey Kelly</a></a></td>
+            <td><a href="#">Mercedes-Benz</a></td>
+            <td><a href="#">new</a></td>
+            <td><a href="#">Sedan</a></td>
+            <td><a href="#">$ 50,000</a></td>
+            <td><a href="#">Pending...</a></td>
+        </tr>
+        <tr>
+            <td><a href="#">09</a></td>
+            <td><a href="#">Julia Gakwaya</a></a></td>
+            <td><a href="#">Mercedes-Benz</a></td>
+            <td><a href="#">Used</a></td>
+            <td><a href="#">Sedan</a></td>
+            <td><a href="#">$ 40,000</a></td>
+            <td><a href="#">Pending...</a></td>
+        </tr>
+      </table>
     </div>
-  </form>
-</div>
+    </div>
   </section>
 
-  <footer id="footer" style="color: black; padding-top: 170px">
+  <footer id="footer" style="color: black; margin-top: -7px;">
     <p>AutoMart, Andela Developer Challenge &copy; Bootcamp Cycle7</p>
   </footer>
   <script src="../js/script.js"></script>

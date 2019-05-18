@@ -364,6 +364,8 @@ table {
     margin-left: 10%;
     padding: 0;
     margin-top: 15px;
+    position: relative;
+    bottom: 12px;
     border-collapse: collapse;
     border-spacing: 0;
     width: 80%;
@@ -553,6 +555,27 @@ input[type=submit] {
   display: none;
 }
 
+/* puchase */
+#buttons{
+  display: flex;
+  float: right;
+}
+#buttons .row{
+  padding-right: 5px;
+}
+td a{
+  text-decoration: none;
+  color: black;
+}
+.accepted a{
+  color: #037c07;
+}
+.rejected a{
+  color: red;
+}
+#order{
+  background-color: rgb(194, 192, 192);
+}
 
 /* footer */
 #footer{
