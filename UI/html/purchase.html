@@ -6,7 +6,7 @@
      <meta name="description" content="Auto Mart">
      <meta name="keywords" content="Auto Mart">
      <meta name="author" content="Raymond Gakwaya">
-   <title>Auto Mart | post</title>
+   <title>Auto Mart | purchase order</title>
    <link rel="stylesheet" href="../css/style.css">
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   </head>
@@ -22,9 +22,9 @@
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
           <div class="overlay-content">
             <a href="./home.html">Home</a>
-            <a href="./post.html" class="active">Post a car Ad</a>
+            <a href="./post.html">Post a car Ad</a>
             <a href="./posted.html">Posted car ads</a>
-            <a href="./purchase.html">Purchase order</a>
+            <a href="./purchase.html" class="active">Purchase order</a>
             <a href="./unsold.html">Unsold Cars</a>
             <a href="./signin.html">Logout</a>
           </div>
@@ -35,9 +35,9 @@
         <div class="navigation">
           <div class="topnav-left">
             <a href="./home.html">Home</a>
-            <a href="./post.html" class="active">Post a car Ad</a>
+            <a href="./post.html">Post a car Ad</a>
             <a href="./posted.html">Posted car ads</a>
-            <a href="./purchase.html">Purchase order</a>
+            <a href="./purchase.html" class="active">Purchase order</a>
             <a href="./unsold.html">Unsold Cars</a>
           </div>
     
@@ -53,21 +53,21 @@
   <section>
   <div id="container" class="container" style="width: 50%; position: absolute; left: 300px; top: 100px;">
   <form class="post-form">
-    <div class="row">
+      <div class="row">
       <div class="title">
-        <label>Owner</label>
+        <label>Buyer</label>
       </div>
       <div class="placeholder">
-        <input type="text" placeholder="Owner..">
+        <input type="text" placeholder="Names..">
       </div>
     </div>
-
+    
     <div class="row">
       <div class="title">
-        <label>Manufacturer</label>
+        <label>Car Model</label>
       </div>
       <div class="placeholder">
-        <input type="text" placeholder="Manufacturer..">
+        <input type="text" placeholder="Model..">
       </div>
     </div>
 
@@ -82,15 +82,6 @@
         </select>
       </div>
     </div>
-
-      <div class="row">
-       <div class="title">
-        <label>Model</label>
-       </div>
-      <div class="placeholder">
-        <input type="text" placeholder="Model..">
-      </div>
-      </div>
 
       <div class="row">
        <div class="title">
@@ -113,23 +104,15 @@
 
        <div class="row">
        <div class="title">
-        <label>Price</label>
+        <label>Price offered</label>
        </div>
       <div class="placeholder">
-        <input type="text" placeholder="Price.."><br><br>
-      </div>
-      </div>
-
-      <div class="row">
-      <div class="placeholder">
-        <form>
-         Upload a photo: <input type="file" multiple><br><br>
-        </form>
+        <input type="text" placeholder="Price offered.."><br><br>
       </div>
       </div>
 
     <div class="row">
-      <input type="submit" value="POST">
+      <input type="submit" value="ORDER">
     </div>
   </form>
 </div>
