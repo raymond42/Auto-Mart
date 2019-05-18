@@ -448,22 +448,30 @@ table {
   /* posted ads */
   #sold-car1 .fa-check-square{
     position: absolute;
-    left: 410px;
+    left: 418px;
     font-size: 30px;
     color: #037c07;
   }
   #sold-car2 .fa-check-square{
     position: absolute;
-    left: 810px;
+    left: 805px;
     font-size: 30px;
     color: #037c07;
   }
   #sold-car3 .fa-check-square{
     position: absolute;
-    left: 1170px;
+    left: 1153px;
     font-size: 30px;
     color: #037c07;
   }
+  /* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
   
   /* post and ad */
   /* Style inputs, select elements and textareas */
@@ -501,14 +509,14 @@ input[type=submit] {
 }
 
 /* Floating column for labels: 25% width */
-.col-25 {
+.title {
   float: left;
   width: 25%;
   margin-top: 6px;
 }
 
 /* Floating column for inputs: 75% width */
-.col-75 {
+.placeholder{
   float: left;
   width: 75%;
   margin-top: 6px;
@@ -520,16 +528,8 @@ input[type=submit] {
   display: table;
   clear: both;
 }
-/* posted ads */
-/* Style the buttons */
-.btn {
-  border: none;
-  outline: none;
-  padding: 12px 16px;
-  background-color: #f1f1f1;
-  cursor: pointer;
-}
 
+/* unsold */
 /* Add a light grey background on mouse-over */
 .btn:hover {
   background-color: #ddd;
@@ -562,16 +562,17 @@ input[type=submit] {
 }
 
 /* querries */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 760px) {
     body{
         background-repeat: no-repeat;
-        background-size: 200%;
+        background-size: 400%;
         background-position: center;
         padding: 0;
         margin: 0;
       }
     h1, h3{
-        font-size: 100%;
+        font-size: 50%;
+        margin-left: -30px;
     }
     h2, h4{
         font-size: 90%;
@@ -662,31 +663,25 @@ input[type=submit] {
   width: 100%;
   margin: 0;
 }
-/* posted cars */
+/* posted car ads */
 #sold-car1 .fa-check-square{
+  display: none;
   font-size: 15px;
   position: absolute;
-  left: 121px;
+  left: 100px;
 }
 #sold-car2 .fa-check-square{
+  display: none;
   font-size: 15px;
   position: absolute;
-  left: 240px;
+  left: 184px;
 }
 #sold-car3 .fa-check-square{
+  display: none;
   font-size: 15px;
   position: absolute;
-  left: 350px;
+  left: 261px;
 }
-
-/* post an ad */
-#container .container{
-  position: absolute;
-  right: 0;
-  left: 2px;
-  width: 100%;
-}
-/* posted ads */
 .old-cars-container{
   padding: 0;
   margin: 0;
@@ -696,6 +691,31 @@ input[type=submit] {
   margin-left: -120px;
   width: 150%;
 }
+
+/* post an ad */
+#container{
+  margin-left: -200px;
+  width: 130%;
+}
+#container .container{
+  position: absolute;
+  right: 0;
+  left: 2px;
+  width: 130%;
+}
+.placeholder{
+  float: none;
+  width: 100%;
+  margin: none;
+  padding: none;
+}
+.title {
+  float: none;
+  width: 100%;
+  margin: none;
+  padding: none;
+}
+
 
 /* footer */
     footer{
