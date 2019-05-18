@@ -14,3 +14,29 @@ const openNav = () => {
 const closeNav = () => {
     document.getElementById("myNav").style.width = "0%";
 }
+
+const showNew = () => {
+    document.getElementById('new-cars').style.display = 'block';
+    document.getElementById('old-cars').style.display = 'none';
+    document.getElementById('all').style.display = 'none';
+    document.getElementById('myBtnContainer').style.display = 'none';
+    document.getElementById('newBtn').style.display = 'block';
+    document.getElementById('usedBtn').style.display = 'none';
+}
+const showOld = () => {
+    document.getElementById('new-cars').style.display = 'none';
+    document.getElementById('old-cars').style.display = 'block';
+    document.getElementById('all').style.display = 'none';
+    document.getElementById('myBtnContainer').style.display = 'none';
+    document.getElementById('newBtn').style.display = 'none';
+    document.getElementById('usedBtn').style.display = 'block';
+    
+}
+const showAll = () => {
+    document.getElementById('new-cars').style.display = 'none';
+    document.getElementById('old-cars').style.display = 'none';
+    document.getElementById('all').style.display = 'block';
+    document.getElementById('myBtnContainer').style.display = 'block';
+    document.getElementById('newBtn').style.display = 'none';
+    document.getElementById('usedBtn').style.display = 'none';
+}
