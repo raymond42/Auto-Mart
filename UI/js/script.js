@@ -40,3 +40,16 @@ const showAll = () => {
     document.getElementById('newBtn').style.display = 'none';
     document.getElementById('usedBtn').style.display = 'none';
 }
+
+// login
+const loginSubmitFunction = () => {
+    const loginform = document.getElementById('loginForm');
+    const adminEmail = 'admin@gmail.com';
+    const person = document.getElementById('loginEmailField').value;
+  
+    if (( person === adminEmail)) {
+      loginform.setAttribute('action', '../html/admin.html');
+    } else {
+      loginform.setAttribute('action', '../html/home.html');
+    }
+  };

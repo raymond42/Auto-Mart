@@ -18,10 +18,10 @@
       
       <section id="body" class="signin-page">
             <div class="form" id="form">
-              <form class="signin-form">
-                <input type="text" placeholder="email" required/>
+              <form action="" class="signin-form" id="loginForm">
+                <input type="email" placeholder="email" id="loginEmailField" required/>
                 <input type="password" placeholder="password" required/>
-                <button> <a href="./home.html"> signin </a> </button>
+                <a href="./home.html"> <button value="Login" id="loginButton" onclick="loginSubmitFunction()">signin</button> </a>
                 <p class="message">Don't have an account? <a href="./signup.html">Signup</a></p>
               </form>
             </div>
@@ -30,5 +30,6 @@
     <footer id="footer">
       <p>AutoMart, Andela Developer Challenge &copy; Bootcamp Cycle7</p>
     </footer>
+    <script src="../js/script.js"></script>
   </body>
 </html>
