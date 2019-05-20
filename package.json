@@ -7,6 +7,7 @@
     "test": "nyc --reporter=html --reporter=text mocha --require @babel/register --timeout 10000 --exit test/*js || true"
   },
   "scripts": {
+    "start": "nodemon --exec babel-node ./server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
