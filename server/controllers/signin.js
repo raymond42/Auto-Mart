@@ -35,7 +35,7 @@ const signin = (req, res) => {
 
   // if everything is correct
   // generate token
-  const token = jwt.sign(user, 'SECRET_KEY', { expiresIn: '15min' });
+  const token = jwt.sign(user, 'SECRET_KEY', { expiresIn: '24hrs' });
 
   return res.status(200).json({
     status: 200,
