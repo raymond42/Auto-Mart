@@ -1,0 +1,41 @@
+import jwt from 'jsonwebtoken';
+import users from '../models/users';
+import validateUserSignup from '../helpers/users';
+
+// signup
+const signup = (req, res) => {
+  const user = users.find(e => e.email === req.body.email);
+  if (user) return res.status(403).json({ status: 403, error: 'The email is already registered' });
+
+  const { error } = validateUserSignup.validation(req.body);
+  if (error) {
+    return res.status(400).json({ status: 400, error: error.details[0].message });
+  }
+
+  const id = parseInt(users.length + 1, 10);
+  const newUser = {
+    id,
+    email: req.body.email,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    password: req.body.password,
+    address: req.body.address,
+    isAdmin: req.body.isAdmin,
+  };
+  const token = jwt.sign(newUser, 'SECRET_KEY', { expiresIn: '24hrs' });
+  users.push(newUser);
+  res.status(201).json({
+    status: 201,
+    data: {
+      token,
+      id: newUser.id,
+      firstName: newUser.firstName,
+      lastName: newUser.lastName,
+      email: newUser.email,
+    },
+  });
+
+  return false;
+};
+
+export default signup;
