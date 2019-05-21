@@ -5,7 +5,7 @@ import validateUserSignup from '../helpers/users';
 // signup
 const signup = (req, res) => {
   const user = users.find(e => e.email === req.body.email);
-  if (user) return res.status(403).json({ status: 403, error: 'The email is already registered' });
+  if (user) return res.status(405).json({ status: 405, error: 'The email is already registered' });
 
   const { error } = validateUserSignup.validation(req.body);
   if (error) {
