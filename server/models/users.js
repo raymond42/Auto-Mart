@@ -9,15 +9,14 @@ const user1 = {
   address: 'Rwanda',
   isAdmin: 'true',
 };
-users.push(user1);
 const user2 = {
   id: 2,
   email: 'chris@gmail.com',
   firstName: 'Christian',
   lastName: 'Habineza',
-  password: 'Asdfg2',
+  password: 'Asdfg1',
   address: 'Rwanda',
   isAdmin: 'false',
 };
-users.push(user2);
+users.push(user2, user1);
 export default users;
