@@ -11,6 +11,17 @@ const car1 = {
   model: '2019 Toyota camry',
   body_type: 'car',
 };
+const car3 = {
+  id: 3,
+  owner: 3,
+  createdOn: '01/01/2019',
+  state: 'used',
+  status: 'available',
+  price: 40000,
+  manufacturer: 'Toyota',
+  model: '2019 Toyota camry',
+  body_type: 'car',
+};
 
 const car2 = {
   id: 2,
@@ -24,5 +35,5 @@ const car2 = {
   body_type: 'car',
 };
 
-cars.push(car1, car2);
+cars.push(car1, car2, car3);
 export default cars;
