@@ -4,7 +4,7 @@ const order1 = {
   id: 1,
   car_id: 1,
   createdOn: '01/01/2019',
-  status: 'approved',
+  status: 'pending',
   price: 40000,
   price_offered: 35000,
 };
