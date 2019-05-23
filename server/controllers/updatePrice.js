@@ -30,13 +30,13 @@ const price = (req, res) => {
       old_price_offered: originalOrder.price_offered,
       new_price_offered: req.body.price_offered,
     };
-    order[newOrder] = {
+    order[orderIndex] = {
       id: originalOrder.id,
-      card_id: originalOrder.card_id,
-      created_on: newOrder.createdOn,
+      car_id: originalOrder.car_id,
+      created_on: newOrder.created_on,
       status: originalOrder.status,
       price: originalOrder.price,
-      price_offered: req.body.new_price_offered,
+      price_offered: newOrder.new_price_offered,
     };
     res.status(200).json({
       status: 200,
