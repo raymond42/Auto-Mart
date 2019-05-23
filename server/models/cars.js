@@ -17,7 +17,7 @@ const car2 = {
   owner: 2,
   createdOn: '01/01/2019',
   state: 'used',
-  status: 'available',
+  status: 'sold',
   price: 45000,
   manufacturer: 'Chevrolet',
   model: '2019 Chevrolet Silverado',
