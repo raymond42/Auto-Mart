@@ -4,8 +4,8 @@ const deletePosted = (req, res) => {
   const post = ads.find(p => p.id === parseInt(req.params.id, 10));
 
   if (!post) {
-    res.status(400).json({
-      status: 400,
+    res.status(404).json({
+      status: 404,
       error: 'Car Ad not found',
     });
     return;
