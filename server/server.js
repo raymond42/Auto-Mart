@@ -9,6 +9,7 @@ import postedRoute from './routes/updatePosted';
 import unsoldRoute from './routes/unsoldCars';
 import allpostedRoute from './routes/getAllPosted';
 import usedUnsoldCars from './routes/getusedUnsold';
+import newUnsoldCars from './routes/getNewUnsold';
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.use('/api/v1/cars', postedRoute);
 app.use('/api/v1/cars', unsoldRoute);
 app.use('/api/v1/cars', allpostedRoute);
 app.use('/api/v1/cars', usedUnsoldCars);
+app.use('/api/v1/cars', newUnsoldCars);
 
 
 const port = process.env.PORT || 4000;
