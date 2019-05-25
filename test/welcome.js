@@ -6,8 +6,8 @@ import app from '../server/server';
 chai.use(chaiHttp);
 chai.should();
 
-describe('View used unsold cars', () => {
-  it('user should be able to view used unsold cars', (done) => {
+describe('Get a welcome message', () => {
+  it('user should be able to get a welcome message', (done) => {
     chai.request(app)
       .get('/')
       .end((err, res) => {
