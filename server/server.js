@@ -10,6 +10,7 @@ import unsoldRoute from './routes/unsoldCars';
 import allpostedRoute from './routes/getAllPosted';
 import usedUnsoldCars from './routes/getusedUnsold';
 import newUnsoldCars from './routes/getNewUnsold';
+import carsWithinPriceRange from './routes/carsWithinPriceRnge';
 
 const app = express();
 
@@ -26,6 +27,7 @@ app.use('/api/v1/cars', unsoldRoute);
 app.use('/api/v1/cars', allpostedRoute);
 app.use('/api/v1/cars', usedUnsoldCars);
 app.use('/api/v1/cars', newUnsoldCars);
+app.use('/api/v1/cars', carsWithinPriceRange);
 
 
 const port = process.env.PORT || 4000;
