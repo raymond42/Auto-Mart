@@ -16,6 +16,9 @@ const app = express();
 
 app.use(express.json());
 app.use(bodyParser.json());
+app.get('/', (req, res) => res.status(200).json({
+  message: 'Welcome to AutoMart',
+}));
 
 app.use('/api/v1/auth', usersRoutes);
 app.use('/api/v1/auth', usersRoutes);
