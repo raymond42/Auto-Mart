@@ -1,8 +1,8 @@
 import moment from 'moment';
 import validateUpdateStatus from '../helpers/markCar';
-import cars from '../models/cars';
+import ads from '../models/ads';
 
-const markCarSold = (req, res) => {
+const markadsold = (req, res) => {
   const { error } = validateUpdateStatus.validation(req.body);
   if (error) {
     res.status(400).json({
@@ -12,9 +12,9 @@ const markCarSold = (req, res) => {
     return;
   }
   const carId = req.params.id;
-  const carIndex = cars.findIndex(o => o.id === parseInt(carId, 10));
+  const carIndex = ads.findIndex(o => o.id === parseInt(carId, 10));
   if (carIndex > -1) {
-    const originalCar = cars[carIndex];
+    const originalCar = ads[carIndex];
     if (originalCar.status !== 'available') {
       res.status(400).json({
         status: 400,
@@ -24,25 +24,23 @@ const markCarSold = (req, res) => {
     }
     const newCar = {
       id: originalCar.id,
-      owner: originalCar.owner,
+      email: originalCar.email,
       createdOn: moment().format('LL'),
-      state: originalCar.state,
-      status: req.body.status,
-      price: originalCar.price,
       manufacturer: originalCar.manufacturer,
       model: originalCar.model,
-      body_type: originalCar.body_type,
+      price: originalCar.price,
+      state: originalCar.state,
+      status: req.body.status,
     };
-    cars[carIndex] = {
+    ads[carIndex] = {
       id: originalCar.id,
       owner: originalCar.owner,
       createdOn: newCar.createdOn,
-      state: originalCar.state,
-      status: newCar.status,
-      price: originalCar.price,
       manufacturer: originalCar.manufacturer,
       model: originalCar.model,
-      body_type: originalCar.body_type,
+      price: originalCar.price,
+      state: originalCar.state,
+      status: newCar.status,
     };
     res.status(200).json({
       status: 200,
@@ -56,4 +54,4 @@ const markCarSold = (req, res) => {
   });
 };
 
-export default markCarSold;
+export default markadsold;
