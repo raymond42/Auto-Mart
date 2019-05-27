@@ -17,7 +17,7 @@ describe('Marking the posted car ad as sold', () => {
       status: 'sold',
     };
     chai.request(app)
-      .patch('/api/v1/car/1')
+      .patch('/api/v1/car/2')
       .set('Authorization', token)
       .send(status)
       .end((err, res) => {
@@ -31,7 +31,7 @@ describe('Marking the posted car ad as sold', () => {
 
   it('user should not be able to mark a posted car ad as sold when he/she is not authorized', (done) => {
     chai.request(app)
-      .patch('/api/v1/car/1')
+      .patch('/api/v1/car/2')
       .end((err, res) => {
         res.should.have.status(401);
         res.should.be.an('object');
@@ -66,7 +66,7 @@ describe('Marking the posted car ad as sold', () => {
     };
     const token = jwt.sign(user, 'SECRET_KEY', { expiresIn: '24hrs' });
     chai.request(app)
-      .patch('/api/v1/car/1')
+      .patch('/api/v1/car/2')
       .set('Authorization', token)
       .end((err, res) => {
         res.should.have.status(400);
@@ -86,7 +86,7 @@ describe('Marking the posted car ad as sold', () => {
       status: 6,
     };
     chai.request(app)
-      .patch('/api/v1/car/1')
+      .patch('/api/v1/car/2')
       .set('Authorization', token)
       .send(status)
       .end((err, res) => {
@@ -106,7 +106,7 @@ describe('Marking the posted car ad as sold', () => {
       status: 'sold',
     };
     chai.request(app)
-      .patch('/api/v1/car/2')
+      .patch('/api/v1/car/3')
       .set('Authorization', token)
       .send(status)
       .end((err, res) => {

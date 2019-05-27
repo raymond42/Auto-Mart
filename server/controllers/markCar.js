@@ -22,7 +22,7 @@ const markadsold = (req, res) => {
       });
       return;
     }
-    const newCar = {
+    const newCarStatus = {
       id: originalCar.id,
       email: originalCar.email,
       createdOn: moment().format('LL'),
@@ -35,16 +35,16 @@ const markadsold = (req, res) => {
     ads[carIndex] = {
       id: originalCar.id,
       owner: originalCar.owner,
-      createdOn: newCar.createdOn,
+      createdOn: newCarStatus.createdOn,
       manufacturer: originalCar.manufacturer,
       model: originalCar.model,
       price: originalCar.price,
       state: originalCar.state,
-      status: newCar.status,
+      status: newCarStatus.status,
     };
     res.status(200).json({
       status: 200,
-      data: newCar,
+      data: newCarStatus,
     });
     return;
   }
