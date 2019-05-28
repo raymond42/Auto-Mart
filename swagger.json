@@ -84,7 +84,7 @@
             {
               "name": "users",
               "in": "body",
-              "description": "user that we want to create",
+              "description": "user that we want to signin",
               "schema": {
                 "$ref": "#/definitions/signin"
               }
@@ -95,7 +95,7 @@
           ],
           "responses": {
             "201": {
-                "description": "success: successfully created"
+                "description": "success: successfully loged in"
               },
               "400": {
                 "description": "Error: invalid input"
