@@ -10,6 +10,7 @@ const ad1 = {
   state: 'new',
   status: 'sold',
 };
+ads.push(ad1);
 
 const ad2 = {
   id: 2,

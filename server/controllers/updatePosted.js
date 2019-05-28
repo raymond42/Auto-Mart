@@ -1,6 +1,6 @@
 import moment from 'moment';
 import validatePostedPrice from '../helpers/postedPrice';
-import cars from '../models/cars';
+import ads from '../models/ads';
 
 const price = (req, res) => {
   const { error } = validatePostedPrice.validation(req.body);
@@ -12,9 +12,9 @@ const price = (req, res) => {
     return;
   }
   const carId = req.params.id;
-  const carIndex = cars.findIndex(o => o.id === parseInt(carId, 10));
+  const carIndex = ads.findIndex(o => o.id === parseInt(carId, 10));
   if (carIndex > -1) {
-    const originalCar = cars[carIndex];
+    const originalCar = ads[carIndex];
     const newCar = {
       id: originalCar.id,
       owner: originalCar.owner,
@@ -26,7 +26,7 @@ const price = (req, res) => {
       model: originalCar.model,
       body_type: originalCar.body_type,
     };
-    cars[carIndex] = {
+    ads[carIndex] = {
       id: originalCar.id,
       owner: originalCar.owner,
       createdOn: newCar.createdOn,
