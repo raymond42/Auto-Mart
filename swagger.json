@@ -316,6 +316,47 @@
           }
         }
       },
+      "/cars/{id}": {
+        "patch": {
+          "tags": [
+            "Adverts"
+          ],
+          "summary": "Update the price of posted car Ad",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+              {
+                "name":"Authorization",
+                "in": "header",
+                "description" :"The user token",
+                "required":true
+              
+              },
+              {
+                "name": "id",
+                "in": "path",
+                "description": "car id",
+                "required":true,
+                "type":"integer"
+              }
+          ],
+          "responses": {
+            "200": {
+                "description": "success: successfully car price updated"
+              },
+              "404": {
+                "description": "Error: no such posted car found"
+              },
+              "401": {
+                "description": "Error: this is when someone tries to update the price of a posted car when he is not authorized"
+              },
+              "500": {
+                "description": "Server Error"
+              }
+          }
+        }
+      },
       "/order": {
         "post": {
           "tags": [
