@@ -2,7 +2,7 @@ import moment from 'moment';
 import validatePostedPrice from '../helpers/postedPrice';
 import ads from '../models/ads';
 
-const price = (req, res) => {
+const updatePriceCar = (req, res) => {
   const { error } = validatePostedPrice.validation(req.body);
   if (error) {
     res.status(400).json({
@@ -48,4 +48,4 @@ const price = (req, res) => {
     error: 'car post not found',
   });
 };
-export default price;
+export default updatePriceCar;

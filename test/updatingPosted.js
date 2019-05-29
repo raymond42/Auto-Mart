@@ -17,7 +17,7 @@ describe('updating the price posted car ad', () => {
       price: 20000,
     };
     chai.request(app)
-      .patch('/api/v1/cars/2')
+      .patch('/api/v1/car/2/price')
       .set('Authorization', token)
       .send(newOrder)
       .end((err, res) => {
@@ -31,7 +31,7 @@ describe('updating the price posted car ad', () => {
 
   it('seller should not be able to update the price of posted car ad when he is not authorized', (done) => {
     chai.request(app)
-      .patch('/api/v1/cars/2')
+      .patch('/api/v1/car/2/price')
       .end((err, res) => {
         res.should.have.status(401);
         res.should.be.an('object');
@@ -47,7 +47,7 @@ describe('updating the price posted car ad', () => {
     };
     const token = jwt.sign(seller, 'SECRET_KEY', { expiresIn: '24hrs' });
     chai.request(app)
-      .patch('/api/v1/cars/2')
+      .patch('/api/v1/car/2/price')
       .set('Authorization', token)
       .end((err, res) => {
         res.should.have.status(400);
@@ -67,7 +67,7 @@ describe('updating the price posted car ad', () => {
       price: 20000,
     };
     chai.request(app)
-      .patch('/api/v1/cars/20')
+      .patch('/api/v1/car/20/price')
       .set('Authorization', token)
       .send(newOrder)
       .end((err, res) => {

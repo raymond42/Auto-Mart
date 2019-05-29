@@ -9,7 +9,7 @@
         "url": "https://opensource.org/licenses/MIT"
       }
     },
-    "host": "localhost:4000",
+    "host": "https://github.com/raymond42/Auto-Mart.git",
     "basePath": "/api/v1",
     "tags": [
       {
@@ -149,7 +149,7 @@
           }
         }
       },
-      "/car/{id}": {
+      "/car/{id}/status": {
         "patch": {
           "tags": [
             "Adverts"
@@ -201,46 +201,6 @@
               }
           }
         },
-        "delete": {
-          "tags": [
-            "Adverts"
-          ],
-          "summary": "Delete the posted Ad record",
-          "description": "user(seller) can delete the posted ad record",
-          "parameters": [
-            {
-                "name":"Authorization",
-                "in": "header",
-                "description" :"The user token",
-                "required":true
-              
-              },
-            {
-              "name": "id",
-              "in": "path",
-              "description": "posted car id you want to delete from the system ",
-              "required":true,
-              "type":"integer"
-            }
-          ],
-          "produces": [
-            "application/json"
-          ],
-          "responses": {
-            "200": {
-                "description": "success: when a car post is sucessfully deleted"
-              },
-              "404": {
-                "description": "Error: when car post not found"
-              },
-              "401": {
-                "description": "Error: this is when someone tries to delete a car sale ad when he is not authorized"
-              },
-              "500": {
-                "description": "Server Error"
-              }
-          }
-        },
         "get": {
           "tags": [
             "Cars"
@@ -275,6 +235,46 @@
               },
               "401": {
                 "description": "Error: this is when someone tries to view a car when he is not authorized"
+              },
+              "500": {
+                "description": "Server Error"
+              }
+          }
+        },
+        "delete": {
+          "tags": [
+            "Adverts"
+          ],
+          "summary": "Delete the posted Ad record",
+          "description": "user(seller) can delete the posted ad record",
+          "parameters": [
+            {
+                "name":"Authorization",
+                "in": "header",
+                "description" :"The user token",
+                "required":true
+              
+              },
+            {
+              "name": "id",
+              "in": "path",
+              "description": "posted car id you want to delete from the system ",
+              "required":true,
+              "type":"integer"
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+                "description": "success: when a car post is sucessfully deleted"
+              },
+              "404": {
+                "description": "Error: when car post not found"
+              },
+              "401": {
+                "description": "Error: this is when someone tries to delete a car sale ad when he is not authorized"
               },
               "500": {
                 "description": "Server Error"
@@ -316,7 +316,7 @@
           }
         }
       },
-      "/cars/{id}": {
+      "/cars/{id}/price": {
         "patch": {
           "tags": [
             "Adverts"
@@ -400,7 +400,7 @@
           }
         }
       },
-      "/order/{id}": {
+      "/order/{id}/price": {
         "patch": {
           "tags": [
             "Orders"
@@ -452,7 +452,7 @@
           }
         }
       },
-      "/cars/available": {
+      "/car?status=available": {
         "get": {
           "tags": [
             "Cars"
@@ -468,7 +468,14 @@
                 "description" :"The user token",
                 "required":true
               
-              }
+            },
+            {
+              "name":"status",
+              "in": "query",
+              "description" :"status",
+              "required":true
+            
+            }
           ],
           "responses": {
             "200": {
@@ -486,7 +493,7 @@
           }
         }
       },
-      "/cars/available/range": {
+      "/cars?status=available&min_price=XXXValue​&max_price=XXXValue​": {
         "get": {
           "tags": [
             "Cars"
@@ -504,12 +511,21 @@
               
               },
               {
-                "name": "price range",
-                "in": "body",
-                "schema": {
-                  "$ref": "#/definitions/priceRange"
-                }
-            }
+                "name":"min_price",
+                "in": "query",
+                "description" :"minimum price",
+                "required":true,
+                "type":"integer"
+              
+              },
+              {
+                "name":"max_price",
+                "in": "query",
+                "description" :"maximum price",
+                "required":true,
+                "type":"integer"
+              
+              }
           ],
           "responses": {
             "200": {
@@ -527,7 +543,7 @@
           }
         }
       },
-      "/cars/available/used": {
+      "/cars/used": {
         "get": {
           "tags": [
             "Cars"
@@ -561,7 +577,7 @@
           }
         }
       },
-      "/cars/available/new": {
+      "/cars/new": {
         "get": {
           "tags": [
             "Cars"

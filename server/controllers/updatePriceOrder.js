@@ -2,7 +2,7 @@ import moment from 'moment';
 import validatePricePrice from '../helpers/updatePrice';
 import order from '../models/order';
 
-const price = (req, res) => {
+const updatePriceOrder = (req, res) => {
   const { error } = validatePricePrice.validation(req.body);
   if (error) {
     res.status(400).json({
@@ -50,4 +50,4 @@ const price = (req, res) => {
   });
 };
 
-export default price;
+export default updatePriceOrder;

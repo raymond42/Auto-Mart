@@ -17,7 +17,7 @@ describe('updating the price purchasing order', () => {
       price_offered: 20000,
     };
     chai.request(app)
-      .patch('/api/v1/order/1')
+      .patch('/api/v1/order/1/price')
       .set('Authorization', token)
       .send(newOrder)
       .end((err, res) => {
@@ -31,7 +31,7 @@ describe('updating the price purchasing order', () => {
 
   it('buyer should not be able to update the price of purchasing order when he/she is not authorized', (done) => {
     chai.request(app)
-      .patch('/api/v1/order/1')
+      .patch('/api/v1/order/1/price')
       .end((err, res) => {
         res.should.have.status(401);
         res.should.be.an('object');
@@ -49,7 +49,7 @@ describe('updating the price purchasing order', () => {
       price_offered: 20000,
     };
     chai.request(app)
-      .patch('/api/v1/order/100')
+      .patch('/api/v1/order/100/price')
       .set('Authorization', token)
       .send(newOrder)
       .end((err, res) => {
@@ -66,7 +66,7 @@ describe('updating the price purchasing order', () => {
     };
     const token = jwt.sign(buyer, 'SECRET_KEY', { expiresIn: '24hrs' });
     chai.request(app)
-      .patch('/api/v1/order/1')
+      .patch('/api/v1/order/1/price')
       .set('Authorization', token)
       .end((err, res) => {
         res.should.have.status(400);
@@ -86,7 +86,7 @@ describe('updating the price purchasing order', () => {
       price_offered: 'jhasdhjh',
     };
     chai.request(app)
-      .patch('/api/v1/order/1')
+      .patch('/api/v1/order/1/price')
       .set('Authorization', token)
       .send(newOrder)
       .end((err, res) => {
@@ -106,7 +106,7 @@ describe('updating the price purchasing order', () => {
       price_offered: 40000,
     };
     chai.request(app)
-      .patch('/api/v1/order/2')
+      .patch('/api/v1/order/2/price')
       .set('Authorization', token)
       .send(newOrder)
       .end((err, res) => {
