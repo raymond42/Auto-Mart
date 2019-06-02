@@ -1,9 +1,11 @@
 import { describe, it } from 'mocha';
+import dotenv from 'dotenv';
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import jwt from 'jsonwebtoken';
 import app from '../server/server';
 
+dotenv.config();
 chai.use(chaiHttp);
 chai.should();
 
@@ -12,7 +14,7 @@ describe('Marking the posted car ad as sold', () => {
     const user = {
       email: 'chris@gmail.com',
     };
-    const token = jwt.sign(user, 'SECRET_KEY', { expiresIn: '24hrs' });
+    const token = jwt.sign(user, process.env.SECRET_KEY, { expiresIn: '24hrs' });
     const status = {
       status: 'sold',
     };
@@ -44,7 +46,7 @@ describe('Marking the posted car ad as sold', () => {
     const user = {
       email: 'chris@gmail.com',
     };
-    const token = jwt.sign(user, 'SECRET_KEY', { expiresIn: '24hrs' });
+    const token = jwt.sign(user, process.env.SECRET_KEY, { expiresIn: '24hrs' });
     const status = {
       status: 'sold',
     };
@@ -64,7 +66,7 @@ describe('Marking the posted car ad as sold', () => {
     const user = {
       email: 'chris@gmail.com',
     };
-    const token = jwt.sign(user, 'SECRET_KEY', { expiresIn: '24hrs' });
+    const token = jwt.sign(user, process.env.SECRET_KEY, { expiresIn: '24hrs' });
     chai.request(app)
       .patch('/api/v1/car/2/status')
       .set('Authorization', token)
@@ -81,7 +83,7 @@ describe('Marking the posted car ad as sold', () => {
     const user = {
       email: 'chris@gmail.com',
     };
-    const token = jwt.sign(user, 'SECRET_KEY', { expiresIn: '24hrs' });
+    const token = jwt.sign(user, process.env.SECRET_KEY, { expiresIn: '24hrs' });
     const status = {
       status: 6,
     };
@@ -101,7 +103,7 @@ describe('Marking the posted car ad as sold', () => {
     const user = {
       email: 'chris@gmail.com',
     };
-    const token = jwt.sign(user, 'SECRET_KEY', { expiresIn: '24hrs' });
+    const token = jwt.sign(user, process.env.SECRET_KEY, { expiresIn: '24hrs' });
     const status = {
       status: 'sold',
     };

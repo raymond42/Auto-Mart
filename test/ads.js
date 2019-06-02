@@ -1,18 +1,20 @@
 import { describe, it } from 'mocha';
 import chai from 'chai';
+import dotenv from 'dotenv';
 import chaiHttp from 'chai-http';
 import jwt from 'jsonwebtoken';
 import app from '../server/server';
 
 chai.use(chaiHttp);
 chai.should();
+dotenv.config();
 
 describe('Post a car a sale ad', () => {
   it('user should be able to post a car sale ad', (done) => {
     const user = {
       email: 'chris@gmail.com',
     };
-    const token = jwt.sign(user, 'SECRET_KEY', { expiresIn: '24hrs' });
+    const token = jwt.sign(user, process.env.SECRET_KEY, { expiresIn: '24hrs' });
     const carAd = {
       owner: 1,
       email: 'chris@gmail.com',
@@ -50,7 +52,7 @@ describe('Post a car a sale ad', () => {
     const user = {
       email: 'raymond@gmail.com',
     };
-    const token = jwt.sign(user, 'SECRET_KEY', { expiresIn: '15min' });
+    const token = jwt.sign(user, process.env.SECRET_KEY, { expiresIn: '15min' });
     const carAd = {
       owner: 1,
       email: 'fadskh@gmail.com',
@@ -76,7 +78,7 @@ describe('Post a car a sale ad', () => {
     const user = {
       email: 'raymond@gmail.com',
     };
-    const token = jwt.sign(user, 'SECRET_KEY', { expiresIn: '15min' });
+    const token = jwt.sign(user, process.env.SECRET_KEY, { expiresIn: '15min' });
     const carAd = {
       owner: 120,
       email: 'fadskh@gmail.com',
@@ -102,7 +104,7 @@ describe('Post a car a sale ad', () => {
     const user = {
       email: 'chris@gmail.com',
     };
-    const token = jwt.sign(user, 'SECRET_KEY', { expiresIn: '15min' });
+    const token = jwt.sign(user, process.env.SECRET_KEY, { expiresIn: '15min' });
     chai.request(app)
       .post('/api/v1/car')
       .set('Authorization', token)
@@ -118,7 +120,7 @@ describe('Post a car a sale ad', () => {
     const user = {
       email: 'chris@gmail.com',
     };
-    const token = jwt.sign(user, 'SECRET_KEY', { expiresIn: '15min' });
+    const token = jwt.sign(user, process.env.SECRET_KEY, { expiresIn: '15min' });
     chai.request(app)
       .post('/api/v1/car')
       .set('Authorization', token)
@@ -134,7 +136,7 @@ describe('Post a car a sale ad', () => {
     const user = {
       email: 'chris@gmail.com',
     };
-    const token = jwt.sign(user, 'SECRET_KEY', { expiresIn: '15min' });
+    const token = jwt.sign(user, process.env.SECRET_KEY, { expiresIn: '15min' });
     chai.request(app)
       .post('/api/v1/car')
       .set('Authorization', token)

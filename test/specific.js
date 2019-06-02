@@ -1,18 +1,20 @@
 import { describe, it } from 'mocha';
 import chai from 'chai';
+import dotenv from 'dotenv';
 import chaiHttp from 'chai-http';
 import jwt from 'jsonwebtoken';
 import app from '../server/server';
 
 chai.use(chaiHttp);
 chai.should();
+dotenv.config();
 
 describe('Viewing a specific car', () => {
   it('user should be able to view a specific car', (done) => {
     const buyer = {
       email: 'chris@gmail.com',
     };
-    const token = jwt.sign(buyer, 'SECRET_KEY', { expiresIn: '24hrs' });
+    const token = jwt.sign(buyer, process.env.SECRET_KEY, { expiresIn: '24hrs' });
     chai.request(app)
       .get('/api/v1/car/1')
       .set('Authorization', token)
@@ -41,7 +43,7 @@ describe('Viewing a specific car', () => {
     const buyer = {
       email: 'chris@gmail.com',
     };
-    const token = jwt.sign(buyer, 'SECRET_KEY', { expiresIn: '24hrs' });
+    const token = jwt.sign(buyer, process.env.SECRET_KEY, { expiresIn: '24hrs' });
     chai.request(app)
       .get('/api/v1/car/19')
       .set('Authorization', token)
@@ -58,7 +60,7 @@ describe('Viewing a specific car', () => {
     const buyer = {
       email: 'chris@gmail.com',
     };
-    const token = jwt.sign(buyer, 'SECRET_KEY', { expiresIn: '24hrs' });
+    const token = jwt.sign(buyer, process.env.SECRET_KEY, { expiresIn: '24hrs' });
     chai.request(app)
       .get('/api/v1/car/19')
       .set('Authorization', token)

@@ -1,18 +1,20 @@
 import { describe, it } from 'mocha';
 import chai from 'chai';
+import dotenv from 'dotenv';
 import chaiHttp from 'chai-http';
 import jwt from 'jsonwebtoken';
 import app from '../server/server';
 
 chai.use(chaiHttp);
 chai.should();
+dotenv.config();
 
 describe('View all unsold cars within a price  range', () => {
   it('user should be able to view all unsold cars within a price  range', (done) => {
     const buyer = {
       email: 'chris@gmail.com',
     };
-    const token = jwt.sign(buyer, 'SECRET_KEY', { expiresIn: '24hrs' });
+    const token = jwt.sign(buyer, process.env.SECRET_KEY, { expiresIn: '24hrs' });
     chai.request(app)
       .get('/api/v1/cars?status=available&min_price=0&max_price=300000')
       .set('Authorization', token)
@@ -29,7 +31,7 @@ describe('View all unsold cars within a price  range', () => {
     const buyer = {
       email: 'chris@gmail.com',
     };
-    const token = jwt.sign(buyer, 'SECRET_KEY', { expiresIn: '24hrs' });
+    const token = jwt.sign(buyer, process.env.SECRET_KEY, { expiresIn: '24hrs' });
     chai.request(app)
       .get('/api/v1/cars?status=available&min_price=0&max_price=30')
       .set('Authorization', token)
@@ -46,7 +48,7 @@ describe('View all unsold cars within a price  range', () => {
     const buyer = {
       email: 'chris@gmail.com',
     };
-    const token = jwt.sign(buyer, 'SECRET_KEY', { expiresIn: '24hrs' });
+    const token = jwt.sign(buyer, process.env.SECRET_KEY, { expiresIn: '24hrs' });
     chai.request(app)
       .get('/api/v1/cars?status=available&min_price&max_price')
       .set('Authorization', token)

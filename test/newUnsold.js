@@ -1,4 +1,5 @@
 import { describe, it } from 'mocha';
+import dotenv from 'dotenv';
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import jwt from 'jsonwebtoken';
@@ -6,13 +7,14 @@ import app from '../server/server';
 
 chai.use(chaiHttp);
 chai.should();
+dotenv.config();
 
 describe('View new unsold cars', () => {
   it('user should be able to view new unsold cars', (done) => {
     const buyer = {
       email: 'chris@gmail.com',
     };
-    const token = jwt.sign(buyer, 'SECRET_KEY', { expiresIn: '24hrs' });
+    const token = jwt.sign(buyer, process.env.SECRET_KEY, { expiresIn: '24hrs' });
     chai.request(app)
       .get('/api/v1/cars/new')
       .set('Authorization', token)

@@ -24,23 +24,6 @@ describe('signin', () => {
       });
   });
 
-  it('user should not be able to signin when there is incorrect data type', (done) => {
-    const user = {
-      email: 1,
-      password: 'Asdfg1',
-    };
-    chai.request(app)
-      .post('/api/v1/auth/signin')
-      .send(user)
-      .end((err, res) => {
-        res.should.have.status(400);
-        res.should.be.an('object');
-        res.body.should.have.property('status').eql(400);
-        res.body.should.have.property('error');
-        done();
-      });
-  });
-
   it('user should not be able to signin when the email is not registered', (done) => {
     const user = {
       email: 'afhdsfd@gmail.com',

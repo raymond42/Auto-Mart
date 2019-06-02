@@ -1,18 +1,20 @@
 import { describe, it } from 'mocha';
 import chai from 'chai';
+import dotenv from 'dotenv';
 import chaiHttp from 'chai-http';
 import jwt from 'jsonwebtoken';
 import app from '../server/server';
 
 chai.use(chaiHttp);
 chai.should();
+dotenv.config();
 
 describe('updating the price purchasing order', () => {
   it('buyer should be able to update the price of purchasing order', (done) => {
     const buyer = {
       email: 'chris@gmail.com',
     };
-    const token = jwt.sign(buyer, 'SECRET_KEY', { expiresIn: '24hrs' });
+    const token = jwt.sign(buyer, process.env.SECRET_KEY, { expiresIn: '24hrs' });
     const newOrder = {
       price_offered: 20000,
     };
@@ -44,7 +46,7 @@ describe('updating the price purchasing order', () => {
     const buyer = {
       email: 'chris@gmail.com',
     };
-    const token = jwt.sign(buyer, 'SECRET_KEY', { expiresIn: '24hrs' });
+    const token = jwt.sign(buyer, process.env.SECRET_KEY, { expiresIn: '24hrs' });
     const newOrder = {
       price_offered: 20000,
     };
@@ -64,7 +66,7 @@ describe('updating the price purchasing order', () => {
     const buyer = {
       email: 'chris@gmail.com',
     };
-    const token = jwt.sign(buyer, 'SECRET_KEY', { expiresIn: '24hrs' });
+    const token = jwt.sign(buyer, process.env.SECRET_KEY, { expiresIn: '24hrs' });
     chai.request(app)
       .patch('/api/v1/order/1/price')
       .set('Authorization', token)
@@ -81,7 +83,7 @@ describe('updating the price purchasing order', () => {
     const buyer = {
       email: 'chris@gmail.com',
     };
-    const token = jwt.sign(buyer, 'SECRET_KEY', { expiresIn: '24hrs' });
+    const token = jwt.sign(buyer, process.env.SECRET_KEY, { expiresIn: '24hrs' });
     const newOrder = {
       price_offered: 'jhasdhjh',
     };
@@ -101,7 +103,7 @@ describe('updating the price purchasing order', () => {
     const buyer = {
       email: 'chris@gmail.com',
     };
-    const token = jwt.sign(buyer, 'SECRET_KEY', { expiresIn: '24hrs' });
+    const token = jwt.sign(buyer, process.env.SECRET_KEY, { expiresIn: '24hrs' });
     const newOrder = {
       price_offered: 40000,
     };
