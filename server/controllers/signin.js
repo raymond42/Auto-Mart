@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
+import bcrypt from 'bcrypt';
 import users from '../models/users';
 import validateUserSignin from '../helpers/signin';
 
@@ -7,8 +8,8 @@ dotenv.config();
 
 const signin = (req, res) => {
   const userSchema = {
-    email: req.body.email,
-    password: req.body.password,
+    email: req.body.email.trim(),
+    password: req.body.password.trim(),
   };
   // Validate user inputs
   const { error } = validateUserSignin.validation(req.body);
@@ -27,7 +28,7 @@ const signin = (req, res) => {
   }
 
   // Check if the entered password is correct
-  const password = users.find(p => p.password === req.body.password);
+  const password = bcrypt.compareSync(req.body.password.trim(), user.password);
   //   if password is Incorrect
   if (!password) {
     return res.status(400).json({
