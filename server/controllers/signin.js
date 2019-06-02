@@ -1,6 +1,9 @@
 import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
 import users from '../models/users';
 import validateUserSignin from '../helpers/signin';
+
+dotenv.config();
 
 const signin = (req, res) => {
   const userSchema = {
@@ -35,7 +38,14 @@ const signin = (req, res) => {
 
   // if everything is correct
   // generate token
-  const token = jwt.sign(user, 'SECRET_KEY', { expiresIn: '24hrs' });
+  const payload = {
+    email: user.email,
+    firstName: user.firstName,
+    lastName: user.lastName,
+    address: user.address,
+    isAdmin: user.isAdmin,
+  };
+  const token = jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: '24hrs' });
 
   return res.status(200).json({
     status: 200,
