@@ -1,4 +1,5 @@
 import jwt from 'jsonwebtoken';
+import bcrypt from 'bcrypt';
 import dotenv from 'dotenv';
 import users from '../models/users';
 import validateUserSignup from '../helpers/users';
@@ -16,15 +17,17 @@ const signup = (req, res) => {
     return res.status(400).json({ status: 400, error: error.details[0].message });
   }
 
+  const hash = bcrypt.hashSync(req.body.password.trim(), 10);
+
   const id = parseInt(users.length + 1, 10);
   const newUser = {
     id,
-    email: req.body.email,
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    password: req.body.password,
-    address: req.body.address,
-    isAdmin: req.body.isAdmin,
+    email: req.body.email.trim(),
+    firstName: req.body.firstName.trim(),
+    lastName: req.body.lastName.trim(),
+    password: hash,
+    address: req.body.address.trim(),
+    isAdmin: req.body.isAdmin.trim(),
   };
   users.push(newUser);
 
