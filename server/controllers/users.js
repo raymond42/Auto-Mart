@@ -1,6 +1,10 @@
 import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
 import users from '../models/users';
 import validateUserSignup from '../helpers/users';
+
+
+dotenv.config();
 
 // signup
 const signup = (req, res) => {
@@ -22,8 +26,18 @@ const signup = (req, res) => {
     address: req.body.address,
     isAdmin: req.body.isAdmin,
   };
-  const token = jwt.sign(newUser, 'SECRET_KEY', { expiresIn: '24hrs' });
   users.push(newUser);
+
+  const payload = {
+    email: newUser.email,
+    firstName: newUser.firstName,
+    lastName: newUser.lastName,
+    password: newUser.password,
+    address: newUser.address,
+    isAdmin: newUser.isAdmin,
+  };
+  const token = jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: '24hrs' });
+
   res.status(201).json({
     status: 201,
     data: {
