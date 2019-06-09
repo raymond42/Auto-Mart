@@ -48,7 +48,7 @@ router.get('/car', auth, getUnsoldCars);
 router.get('/cars', getUnsoldCarsWithinPriceRange);
 
 // delete a car ad
-router.delete('/car/:id', deletePosted);
+router.delete('/car/:id', auth, deletePosted);
 
 // get all posted car ads
 router.get('/cars/posted', auth, allposted);
