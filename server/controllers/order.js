@@ -26,7 +26,7 @@ const Order = (req, res) => {
   if (!userId) {
     res.status(404).json({
       status: 404,
-      error: 'buyer id not found',
+      message: 'buyer id not found',
     });
     return;
   }
@@ -35,7 +35,7 @@ const Order = (req, res) => {
   if (!carId) {
     res.status(404).json({
       status: 404,
-      error: 'car ordered not found',
+      message: 'car ordered not found',
     });
     return;
   }
