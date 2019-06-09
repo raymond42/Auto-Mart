@@ -19,7 +19,7 @@ const Ads = (req, res) => {
     model: req.body.model,
     price: req.body.price,
     state: req.body.state,
-    status: req.body.status || 'available',
+    status: req.body.status,
   };
   const userId = users.find(o => o.id === parseInt(newAd.owner, 10));
   if (!userId) {
