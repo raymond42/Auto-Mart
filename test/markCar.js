@@ -115,6 +115,25 @@ describe('Marking the posted car ad as sold', () => {
         res.should.have.status(400);
         res.should.be.an('object');
         res.body.should.have.property('status').eql(400);
+        res.body.should.have.property('message');
+        done();
+      });
+  });
+  it('user should not be able to mark a posted car ad as available', (done) => {
+    const user = {
+      email: 'chris@gmail.com',
+    };
+    const token = jwt.sign(user, process.env.SECRET_KEY, { expiresIn: '24hrs' });
+    chai.request(app)
+      .patch('/api/v1/car/2/status')
+      .set('Authorization', token)
+      .send({
+        status: 'available',
+      })
+      .end((err, res) => {
+        res.should.have.status(403);
+        res.should.be.an('object');
+        res.body.should.have.property('status').eql(403);
         res.body.should.have.property('error');
         done();
       });
