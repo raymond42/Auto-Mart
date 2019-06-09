@@ -543,7 +543,7 @@
           }
         }
       },
-      "/cars/used": {
+      "/cars/available/used": {
         "get": {
           "tags": [
             "Cars"
@@ -577,7 +577,7 @@
           }
         }
       },
-      "/cars/new": {
+      "/cars/available/new": {
         "get": {
           "tags": [
             "Cars"

@@ -48,15 +48,15 @@ router.get('/car', auth, getUnsoldCars);
 router.get('/cars', getUnsoldCarsWithinPriceRange);
 
 // delete a car ad
-router.delete('/car/:id', deletePosted);
+router.delete('/car/:id', auth, deletePosted);
 
 // get all posted car ads
 router.get('/cars/posted', auth, allposted);
 
 // get all used unsold cars
-router.get('/cars/used', auth, getUsedUnsoldCars);
+router.get('/cars/available/used', auth, getUsedUnsoldCars);
 
 // get all new unsold cars
-router.get('/cars/new', auth, getNewUnsoldCars);
+router.get('/cars/available/new', auth, getNewUnsoldCars);
 
 export default router;

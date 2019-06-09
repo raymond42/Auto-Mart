@@ -42,12 +42,12 @@ const Ads = (req, res) => {
     data: {
       id,
       createdOn: moment().format('LL'),
-      email: req.body.email,
-      manufacturer: req.body.manufacturer,
-      model: req.body.model,
-      price: req.body.price,
-      state: req.body.state,
-      status: req.body.status,
+      email: newAd.email,
+      manufacturer: newAd.manufacturer,
+      model: newAd.model,
+      price: newAd.price,
+      state: newAd.state,
+      status: newAd.status,
     },
   });
 };

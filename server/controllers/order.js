@@ -7,7 +7,11 @@ import validateOrder from '../helpers/order';
 const Order = (req, res) => {
   const { error } = validateOrder.validation(req.body);
   if (error) {
-    return res.status(400).json({ status: 400, error: error.details[0].message });
+    res.status(400).json({
+      status: 400,
+      error: error.details[0].message,
+    });
+    return;
   }
 
   const id = parseInt(order.length + 1, 10);
@@ -20,22 +24,24 @@ const Order = (req, res) => {
   };
   const userId = users.find(b => b.id === parseInt(newOrder.buyer, 10));
   if (!userId) {
-    return res.status(404).json({
+    res.status(404).json({
       status: 404,
-      error: 'buyer id not found',
+      message: 'buyer id not found',
     });
+    return;
   }
 
   const carId = cars.find(c => c.id === parseInt(newOrder.car_id, 10));
   if (!carId) {
-    return res.status(404).json({
+    res.status(404).json({
       status: 404,
-      error: 'car ordered not found',
+      message: 'car ordered not found',
     });
+    return;
   }
 
   order.push(newOrder);
-  return res.status(201).json({
+  res.status(201).json({
     status: 201,
     data: {
       id,

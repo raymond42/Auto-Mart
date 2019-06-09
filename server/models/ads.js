@@ -44,5 +44,5 @@ const ad4 = {
   status: 'available',
 };
 
-ads.push(ad1, ad2, ad3, ad4);
+ads.push(ad2, ad3, ad4);
 export default ads;

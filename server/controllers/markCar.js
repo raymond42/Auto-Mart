@@ -15,10 +15,17 @@ const markadsold = (req, res) => {
   const carIndex = ads.findIndex(o => o.id === parseInt(carId, 10));
   if (carIndex > -1) {
     const originalCar = ads[carIndex];
-    if (originalCar.status !== 'available') {
+    if (req.body.status !== 'sold') {
+      res.status(403).json({
+        status: 403,
+        error: 'you can only mark a car as sold',
+      });
+      return;
+    }
+    if (req.body.status === originalCar.status) {
       res.status(400).json({
         status: 400,
-        error: 'you can not change the status of this car',
+        message: `The car is already marked as ${originalCar.status}`,
       });
       return;
     }
