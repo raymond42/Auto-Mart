@@ -9,12 +9,22 @@ dotenv.config();
 
 // signup
 const signup = (req, res) => {
-  const user = users.find(e => e.email === req.body.email);
-  if (user) return res.status(405).json({ status: 405, error: 'The email is already registered' });
-
   const { error } = validateUserSignup.validation(req.body);
   if (error) {
-    return res.status(400).json({ status: 400, error: error.details[0].message });
+    res.status(400).json({
+      status: 400,
+      error: error.details[0].message,
+    });
+    return;
+  }
+
+  const user = users.find(e => e.email === req.body.email);
+  if (user) {
+    res.status(405).json({
+      status: 405,
+      error: 'The email is already registered',
+    });
+    return;
   }
 
   const hash = bcrypt.hashSync(req.body.password.trim(), 10);
@@ -27,7 +37,7 @@ const signup = (req, res) => {
     lastName: req.body.lastName.trim(),
     password: hash,
     address: req.body.address.trim(),
-    isAdmin: req.body.isAdmin.trim(),
+    isAdmin: req.body.isAdmin,
   };
   users.push(newUser);
 
@@ -51,8 +61,6 @@ const signup = (req, res) => {
       email: newUser.email,
     },
   });
-
-  return false;
 };
 
 export default signup;
