@@ -125,6 +125,19 @@ body.image{
     font-size: 200%;
     color: white;
 }
+#info{
+  padding-right: 20%;
+  columns: white;
+  width: 70%;
+}
+#info h3{
+  font-size: 280%;
+  color: white;
+}
+#info h4{
+  font-size: 200%;
+  color: white;
+}
   .form {
     padding-right: 30px;
     width: 30%;
@@ -183,18 +196,6 @@ body.image{
 .form .message a:hover{
     color: rgb(255, 255, 255);
   }
-  /* signin page */
-  .signin-page{
-    padding-top: 10%;
-}
-#form{
-  position: relative;
-  background: rgba(1, 6, 51, 0.479);
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-  margin: 0 auto 100px;
-  padding: 45px;
-  text-align: center;
-}
 /* home */  
 .topnav {
     overflow: hidden;
