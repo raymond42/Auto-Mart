@@ -118,12 +118,12 @@ body.image{
     width: 70%;
 }
 .info h3{
-    font-size: 250%;
-    color: #FFFFFF;
+    font-size: 280%;
+    color: white;
 }
 .info h4{
     font-size: 200%;
-    color: lightgray;
+    color: white;
 }
   .form {
     padding-right: 30px;
@@ -172,11 +172,11 @@ body.image{
 }
 .form .message {
   margin: 15px 0 0;
-  color: #b3b3b3;
-  font-size: 100%;
+  color: #ffffff;
+  font-size: 120%;
 }
 .form .message a {
-  color: #b3b3b3;
+  color: #d8d3d3;
   text-decoration: none;
 }
 
