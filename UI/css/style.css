@@ -22,9 +22,9 @@ body{
     text-decoration: none;
     color: white;
 }
-.logo a span{
-    font-size: 150%;
-    color: green;
+span{
+  font-size: 150%;
+  color: green;
 }
 .logo a img{
     width: 6%;
@@ -73,9 +73,17 @@ body{
 
 .welcome h1{
     font-family: Arial, Helvetica, sans-serif;
-    letter-spacing: 15px;
-    font-size: 200%;
+    letter-spacing: 10px;
+    font-size: 240%;
     text-align: center;
+}
+.welcome h2{
+  font-size: 150%;
+  padding-left: 100px;
+}
+.welcome p{
+  font-size: 90%;
+  font-weight: lighter;
 }
 .welcome a{
     padding: 1%;
@@ -110,12 +118,25 @@ body.image{
     width: 70%;
 }
 .info h3{
-    font-size: 250%;
-    color: #FFFFFF;
+    font-size: 280%;
+    color: white;
 }
 .info h4{
     font-size: 200%;
-    color: lightgray;
+    color: white;
+}
+#info{
+  padding-right: 20%;
+  columns: white;
+  width: 70%;
+}
+#info h3{
+  font-size: 280%;
+  color: white;
+}
+#info h4{
+  font-size: 200%;
+  color: white;
 }
   .form {
     padding-right: 30px;
@@ -140,7 +161,7 @@ body.image{
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
-    background:  rgb(17, 17, 17);
+    background:  rgb(3, 82, 13);
     
     width: 100%;
     border: 0;
@@ -164,29 +185,17 @@ body.image{
 }
 .form .message {
   margin: 15px 0 0;
-  color: #b3b3b3;
-  font-size: 100%;
+  color: #ffffff;
+  font-size: 120%;
 }
 .form .message a {
-  color: #b3b3b3;
+  color: #d8d3d3;
   text-decoration: none;
 }
 
 .form .message a:hover{
     color: rgb(255, 255, 255);
   }
-  /* signin page */
-  .signin-page{
-    padding-top: 10%;
-}
-#form{
-  position: relative;
-  background: rgba(1, 6, 51, 0.479);
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-  margin: 0 auto 100px;
-  padding: 45px;
-  text-align: center;
-}
 /* home */  
 .topnav {
     overflow: hidden;
@@ -593,7 +602,7 @@ td a{
 
 /* footer */
 #footer{
-  margin-top: 24.5%;
+  margin-top: 27%;
     color: aliceblue;
     text-align: center;
 }
@@ -608,7 +617,7 @@ td a{
         margin: 0;
       }
     h1, h3{
-        font-size: 50%;
+        font-size: 40%;
         margin-left: -30px;
     }
     h2, h4{
@@ -641,6 +650,17 @@ td a{
     .welcome a{
         letter-spacing: 2px;
         margin-bottom: 10%;
+
+    }
+    .welcome h1{
+      font-size: 150%;
+    }
+    .welcome p{
+      font-size: 50%;
+    }
+    .welcome h2{
+      font-size: 100%;
+      padding: 0;
     }
     .home-buttons{
       display: none;
