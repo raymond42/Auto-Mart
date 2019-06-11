@@ -1,4 +1,4 @@
-import ads from '../models/ads';
+import ads from '../../models/ads';
 
 const deletePosted = (req, res) => {
   const post = ads.find(p => p.id === parseInt(req.params.id, 10));

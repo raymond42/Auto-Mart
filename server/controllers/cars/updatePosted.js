@@ -1,6 +1,6 @@
 import moment from 'moment';
-import validatePostedPrice from '../helpers/postedPrice';
-import ads from '../models/ads';
+import validatePostedPrice from '../../helpers/postedPrice';
+import ads from '../../models/ads';
 
 const updatePriceCar = (req, res) => {
   const { error } = validatePostedPrice.validation(req.body);

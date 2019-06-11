@@ -1,4 +1,4 @@
-import ads from '../models/ads';
+import ads from '../../models/ads';
 
 const allposted = (req, res) => {
   res.status(200).json({

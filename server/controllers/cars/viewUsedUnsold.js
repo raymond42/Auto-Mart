@@ -1,4 +1,4 @@
-import cars from '../models/cars';
+import cars from '../../models/cars';
 
 const getUsedUnsoldCars = (req, res) => {
   const usedUnsoldCars = cars.filter(c => c.status === 'available' && c.state === 'used');
