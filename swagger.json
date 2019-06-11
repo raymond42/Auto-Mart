@@ -9,7 +9,7 @@
         "url": "https://opensource.org/licenses/MIT"
       }
     },
-    "host": "https://github.com/raymond42/Auto-Mart.git",
+    "host": "https://automart-andela-challenge.herokuapp.com",
     "basePath": "/api/v1",
     "tags": [
       {
