@@ -1,7 +1,7 @@
 import moment from 'moment';
-import ads from '../models/ads';
-import users from '../models/users';
-import validateAd from '../helpers/ads';
+import ads from '../../models/ads';
+import users from '../../models/users';
+import validateAd from '../../helpers/ads';
 
 const Ads = (req, res) => {
   const { error } = validateAd.validation(req.body);

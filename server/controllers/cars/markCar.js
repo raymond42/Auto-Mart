@@ -1,6 +1,6 @@
 import moment from 'moment';
-import validateUpdateStatus from '../helpers/markCar';
-import ads from '../models/ads';
+import validateUpdateStatus from '../../helpers/markCar';
+import ads from '../../models/ads';
 
 const markadsold = (req, res) => {
   const { error } = validateUpdateStatus.validation(req.body);

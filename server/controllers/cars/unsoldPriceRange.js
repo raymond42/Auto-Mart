@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
-import cars from '../models/cars';
-import validateRange from '../helpers/priceRange';
+import cars from '../../models/cars';
+import validateRange from '../../helpers/priceRange';
 
 const getUnsoldCarsWithinPriceRange = (req, res) => {
   const { error } = validateRange.validation(req.query);

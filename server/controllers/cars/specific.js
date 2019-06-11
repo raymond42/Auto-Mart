@@ -1,4 +1,4 @@
-import cars from '../models/cars';
+import cars from '../../models/cars';
 
 const getCar = (req, res) => {
   const car = cars.find(c => c.id === parseInt(req.params.id, 10));

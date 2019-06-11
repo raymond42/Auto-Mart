@@ -1,5 +1,5 @@
-import cars from '../models/cars';
-import validateUnsold from '../helpers/unsold';
+import cars from '../../models/cars';
+import validateUnsold from '../../helpers/unsold';
 
 const getUnsoldCars = (req, res) => {
   const { error } = validateUnsold.validation(req.query);

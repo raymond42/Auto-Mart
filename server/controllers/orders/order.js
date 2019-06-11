@@ -1,8 +1,8 @@
 import moment from 'moment';
-import order from '../models/order';
-import users from '../models/users';
-import cars from '../models/cars';
-import validateOrder from '../helpers/order';
+import order from '../../models/order';
+import users from '../../models/users';
+import cars from '../../models/cars';
+import validateOrder from '../../helpers/order';
 
 const Order = (req, res) => {
   const { error } = validateOrder.validation(req.body);

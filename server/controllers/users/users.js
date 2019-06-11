@@ -1,8 +1,8 @@
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 import dotenv from 'dotenv';
-import users from '../models/users';
-import validateUserSignup from '../helpers/users';
+import users from '../../models/users';
+import validateUserSignup from '../../helpers/users';
 
 
 dotenv.config();
