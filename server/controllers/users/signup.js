@@ -26,6 +26,13 @@ const signup = (req, res) => {
     });
     return;
   }
+  if (!req.body.length > 0) {
+    res.status(403).json({
+      status: 403,
+      error: 'sorry, you can not send an empty info!',
+    });
+    return;
+  }
 
   const hash = bcrypt.hashSync(req.body.password.trim(), 10);
 
