@@ -16,7 +16,6 @@ describe('Purchasing order', () => {
     };
     const token = jwt.sign(buyer, process.env.SECRET_KEY, { expiresIn: '24hrs' });
     const newOrder = {
-      buyer: 1,
       car_id: 1,
       amount: 20000,
     };
@@ -44,35 +43,12 @@ describe('Purchasing order', () => {
         done();
       });
   });
-  it('buyer should not be able to make a purchasing order when he/she is not in the system', (done) => {
-    const buyer = {
-      email: 'chris@gmail.com',
-    };
-    const token = jwt.sign(buyer, process.env.SECRET_KEY, { expiresIn: '24hrs' });
-    const newOrder = {
-      buyer: 30,
-      car_id: 1,
-      amount: 20000,
-    };
-    chai.request(app)
-      .post('/api/v1/order')
-      .set('Authorization', token)
-      .send(newOrder)
-      .end((err, res) => {
-        res.should.have.status(404);
-        res.should.be.an('object');
-        res.body.should.have.property('status').eql(404);
-        res.body.should.have.property('message');
-        done();
-      });
-  });
   it('buyer should not be able to make a purchasing order when the car id is not found', (done) => {
     const buyer = {
       email: 'raymond@gmail.com',
     };
     const token = jwt.sign(buyer, process.env.SECRET_KEY, { expiresIn: '24hrs' });
     const newOrder = {
-      buyer: 1,
       car_id: 10,
       amount: 20000,
     };
@@ -111,7 +87,6 @@ describe('Purchasing order', () => {
     };
     const token = jwt.sign(buyer, process.env.SECRET_KEY, { expiresIn: '24hrs' });
     const newOrder = {
-      buyer: 1,
       car_id: 10,
       amount: 'two',
     };

@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-newline */
 import moment from 'moment';
 import ads from '../../models/ads';
 import users from '../../models/users';
@@ -10,25 +11,9 @@ const Ads = (req, res) => {
   }
 
   const id = parseInt(ads.length + 1, 10);
-  const newAd = {
-    id,
-    createdOn: moment().format('LL'),
-    owner: req.body.owner,
-    email: req.body.email,
-    manufacturer: req.body.manufacturer,
-    model: req.body.model,
-    price: req.body.price,
-    state: req.body.state,
-    status: req.body.status,
-  };
-  const userId = users.find(o => o.id === parseInt(newAd.owner, 10));
-  if (!userId) {
-    return res.status(404).json({
-      status: 404,
-      error: 'owner not found',
-    });
-  }
-  const user = users.find(e => e.email === newAd.email);
+  const { email, manufacturer, model, price, state, status } = req.body;
+  const newUser = { id, email, manufacturer, model, price, state, status };
+  const user = users.find(e => e.email === email);
   if (!user) {
     return res.status(404).json({
       status: 404,
@@ -36,18 +21,18 @@ const Ads = (req, res) => {
     });
   }
 
-  ads.push(newAd);
+  ads.push(newUser);
   return res.status(201).json({
     status: 201,
     data: {
       id,
       createdOn: moment().format('LL'),
-      email: newAd.email,
-      manufacturer: newAd.manufacturer,
-      model: newAd.model,
-      price: newAd.price,
-      state: newAd.state,
-      status: newAd.status,
+      email,
+      manufacturer,
+      model,
+      price,
+      state,
+      status,
     },
   });
 };

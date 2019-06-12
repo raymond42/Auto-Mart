@@ -1,9 +1,9 @@
+/* eslint-disable object-curly-newline */
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 import dotenv from 'dotenv';
 import users from '../../models/users';
 import validateUserSignup from '../../helpers/users';
-
 
 dotenv.config();
 
@@ -26,35 +26,20 @@ const signup = (req, res) => {
     });
     return;
   }
-  if (!req.body.length > 0) {
-    res.status(403).json({
-      status: 403,
-      error: 'sorry, you can not send an empty info!',
-    });
-    return;
-  }
 
-  const hash = bcrypt.hashSync(req.body.password.trim(), 10);
 
   const id = parseInt(users.length + 1, 10);
-  const newUser = {
-    id,
-    email: req.body.email.trim(),
-    firstName: req.body.firstName.trim(),
-    lastName: req.body.lastName.trim(),
-    password: hash,
-    address: req.body.address.trim(),
-    isAdmin: req.body.isAdmin,
-  };
-  users.push(newUser);
+  const { email, firstName, lastName, password, address, isAdmin } = req.body;
+  bcrypt.hashSync(password.trim(), 10);
+
+  users.push(req.body);
 
   const payload = {
-    email: newUser.email,
-    firstName: newUser.firstName,
-    lastName: newUser.lastName,
-    password: newUser.password,
-    address: newUser.address,
-    isAdmin: newUser.isAdmin,
+    email,
+    firstName,
+    lastName,
+    address,
+    isAdmin,
   };
   const token = jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: '24hrs' });
 
@@ -62,10 +47,10 @@ const signup = (req, res) => {
     status: 201,
     data: {
       token,
-      id: newUser.id,
-      firstName: newUser.firstName,
-      lastName: newUser.lastName,
-      email: newUser.email,
+      id,
+      firstName,
+      lastName,
+      email,
     },
   });
 };

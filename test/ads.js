@@ -16,7 +16,6 @@ describe('Post a car a sale ad', () => {
     };
     const token = jwt.sign(user, process.env.SECRET_KEY, { expiresIn: '24hrs' });
     const carAd = {
-      owner: 1,
       email: 'chris@gmail.com',
       manufacturer: 'Toyota',
       model: '2019 Toyota camry',
@@ -54,7 +53,6 @@ describe('Post a car a sale ad', () => {
     };
     const token = jwt.sign(user, process.env.SECRET_KEY, { expiresIn: '15min' });
     const carAd = {
-      owner: 1,
       email: 'fadskh@gmail.com',
       manufacturer: 'Toyota',
       model: '2019 Toyota camry',
@@ -80,7 +78,6 @@ describe('Post a car a sale ad', () => {
     };
     const token = jwt.sign(user, process.env.SECRET_KEY, { expiresIn: '15min' });
     const carAd = {
-      owner: 120,
       email: 'fadskh@gmail.com',
       manufacturer: 'Toyota',
       model: '2019 Toyota camry',

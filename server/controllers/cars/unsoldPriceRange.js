@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /* eslint-disable max-len */
 import cars from '../../models/cars';
 import validateRange from '../../helpers/priceRange';
@@ -11,12 +12,9 @@ const getUnsoldCarsWithinPriceRange = (req, res) => {
     });
     return;
   }
-  const Price = {
-    min_price: req.query.min_price,
-    max_price: req.query.max_price,
-  };
-  const unsoldCars = cars.filter(car => car.status === 'available');
-  const PriceRange = unsoldCars.filter(p => p.price >= Price.min_price && p.price <= Price.max_price);
+  const { min_price, max_price, status } = req.query;
+  const unsoldCars = cars.filter(car => car.status === status);
+  const PriceRange = unsoldCars.filter(p => p.price >= min_price && p.price <= max_price);
   if (!PriceRange.length) {
     res.status(404).json({
       status: 404,
