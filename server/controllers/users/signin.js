@@ -7,10 +7,7 @@ import validateUserSignin from '../../helpers/signin';
 dotenv.config();
 
 const signin = (req, res) => {
-  const userSchema = {
-    email: req.body.email.trim(),
-    password: req.body.password.trim(),
-  };
+  const { email, password } = req.body;
   // Validate user inputs
   const { error } = validateUserSignin.validation(req.body);
   if (error) {
@@ -18,7 +15,7 @@ const signin = (req, res) => {
   }
 
   // Check if the entered email exists
-  const user = users.find(e => e.email === userSchema.email);
+  const user = users.find(e => e.email === email);
   //   if user doesn't exist
   if (!user) {
     return res.status(404).json({
@@ -28,9 +25,9 @@ const signin = (req, res) => {
   }
 
   // Check if the entered password is correct
-  const password = bcrypt.compareSync(req.body.password.trim(), user.password);
+  const comparePassword = bcrypt.compareSync(password.trim(), user.password);
   //   if password is Incorrect
-  if (!password) {
+  if (!comparePassword) {
     return res.status(400).json({
       status: 400,
       error: 'Incorrect password',

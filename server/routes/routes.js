@@ -1,7 +1,7 @@
 import express from 'express';
 import ads from '../controllers/cars/ads';
 import auth from '../middleware/auth';
-import signup from '../controllers/users/users';
+import signup from '../controllers/users/signup';
 import signin from '../controllers/users/signin';
 import markCarSold from '../controllers/cars/markCar';
 import getCar from '../controllers/cars/specific';
@@ -14,6 +14,7 @@ import getUnsoldCars from '../controllers/cars/unsold';
 import updatePriceOrder from '../controllers/orders/updatePriceOrder';
 import getNewUnsoldCars from '../controllers/cars/viewNewunsold';
 import updatePriceCar from '../controllers/cars/updatePosted';
+import admin from '../middleware/admin';
 
 const router = express.Router();
 
@@ -48,7 +49,7 @@ router.get('/car', auth, getUnsoldCars);
 router.get('/cars', getUnsoldCarsWithinPriceRange);
 
 // delete a car ad
-router.delete('/car/:id', auth, deletePosted);
+router.delete('/car/:id', [auth, admin], deletePosted);
 
 // get all posted car ads
 router.get('/cars/posted', auth, allposted);
