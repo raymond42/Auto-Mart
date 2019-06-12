@@ -19,7 +19,7 @@ const Order = (req, res) => {
   const { car_id, amount, status } = req.body;
   const newOrder = { id, car_id, amount, status };
 
-  const carId = ads.find(c => c.id === parseInt(newOrder.car_id, 10));
+  const carId = ads.find(c => c.id === parseInt(car_id, 10));
   if (!carId) {
     res.status(404).json({
       status: 404,

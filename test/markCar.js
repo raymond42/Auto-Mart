@@ -119,7 +119,7 @@ describe('Marking the posted car ad as sold', () => {
         done();
       });
   });
-  it('user should not be able to mark a posted car ad as available', (done) => {
+  it('user should be able to mark a posted car ad as available', (done) => {
     const user = {
       email: 'chris@gmail.com',
     };
@@ -131,10 +131,10 @@ describe('Marking the posted car ad as sold', () => {
         status: 'available',
       })
       .end((err, res) => {
-        res.should.have.status(403);
+        res.should.have.status(200);
         res.should.be.an('object');
-        res.body.should.have.property('status').eql(403);
-        res.body.should.have.property('error');
+        res.body.should.have.property('status').eql(200);
+        res.body.should.have.property('data');
         done();
       });
   });

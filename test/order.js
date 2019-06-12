@@ -16,7 +16,7 @@ describe('Purchasing order', () => {
     };
     const token = jwt.sign(buyer, process.env.SECRET_KEY, { expiresIn: '24hrs' });
     const newOrder = {
-      car_id: 1,
+      car_id: 2,
       amount: 20000,
     };
     chai.request(app)
