@@ -11,10 +11,10 @@ chai.should();
 
 describe('Purchasing order', () => {
   it('buyer should be able to make a purchasing order', (done) => {
-    const buyer = {
+    const user = {
       email: 'chris@gmail.com',
     };
-    const token = jwt.sign(buyer, process.env.SECRET_KEY, { expiresIn: '24hrs' });
+    const token = jwt.sign(user, process.env.SECRET_KEY, { expiresIn: '24hrs' });
     const newOrder = {
       car_id: 2,
       amount: 20000,
