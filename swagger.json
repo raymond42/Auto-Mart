@@ -664,7 +664,6 @@
       },
       "car_sale_post_ad": {
         "required": [
-          "owner",
           "email",
           "manufacturer",
           "model",
@@ -699,7 +698,6 @@
     },
       "order": {
         "required": [
-            "buyer",
             "car_id",
             "amount"
         ],
