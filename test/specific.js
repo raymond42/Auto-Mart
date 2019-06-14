@@ -51,24 +51,7 @@ describe('Viewing a specific car', () => {
         res.should.have.status(404);
         res.should.be.an('object');
         res.body.should.have.property('status').eql(404);
-        res.body.should.have.property('error');
-        done();
-      });
-  });
-
-  it('user should not be able to view a specific car when the car is not in the system', (done) => {
-    const buyer = {
-      email: 'chris@gmail.com',
-    };
-    const token = jwt.sign(buyer, process.env.SECRET_KEY, { expiresIn: '24hrs' });
-    chai.request(app)
-      .get('/api/v1/car/19')
-      .set('Authorization', token)
-      .end((err, res) => {
-        res.should.have.status(404);
-        res.should.be.an('object');
-        res.body.should.have.property('status').eql(404);
-        res.body.should.have.property('error');
+        res.body.should.have.property('message');
         done();
       });
   });

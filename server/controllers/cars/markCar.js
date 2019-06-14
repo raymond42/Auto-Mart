@@ -50,7 +50,8 @@ const markadsold = (req, res) => {
   }
   res.status(404).json({
     status: 404,
-    error: 'car post not found',
+    message: 'car post not found',
+    data: [],
   });
 };
 

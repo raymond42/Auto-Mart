@@ -18,7 +18,8 @@ const getUnsoldCarsWithinPriceRange = (req, res) => {
   if (!PriceRange.length) {
     res.status(404).json({
       status: 404,
-      error: 'there are no cars within that price range not found',
+      message: 'there are no cars within that price range not found',
+      data: [],
     });
     return;
   }

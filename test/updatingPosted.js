@@ -76,7 +76,7 @@ describe('updating the price posted car ad', () => {
         res.should.have.status(404);
         res.should.be.an('object');
         res.body.should.have.property('status').eql(404);
-        res.body.should.have.property('error');
+        res.body.should.have.property('message');
         done();
       });
   });

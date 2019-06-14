@@ -13,7 +13,8 @@ const deletePosted = (req, res) => {
   if (!post) {
     res.status(404).json({
       status: 404,
-      error: 'Car Ad not found',
+      message: 'Car Ad not found',
+      data: [],
     });
     return;
   }

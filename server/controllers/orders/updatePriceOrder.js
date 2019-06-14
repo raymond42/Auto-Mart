@@ -46,7 +46,8 @@ const updatePriceOrder = (req, res) => {
   }
   res.status(404).json({
     status: 404,
-    error: 'order not found',
+    message: 'order not found',
+    data: [],
   });
 };
 

@@ -24,6 +24,7 @@ const Order = (req, res) => {
     res.status(404).json({
       status: 404,
       message: 'car ordered not found',
+      data: [],
     });
     return;
   }

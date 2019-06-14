@@ -58,7 +58,7 @@ describe('updating the price purchasing order', () => {
         res.should.have.status(404);
         res.should.be.an('object');
         res.body.should.have.property('status').eql(404);
-        res.body.should.have.property('error');
+        res.body.should.have.property('message');
         done();
       });
   });
