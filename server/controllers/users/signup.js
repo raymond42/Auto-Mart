@@ -29,10 +29,10 @@ const signup = (req, res) => {
 
 
   const id = parseInt(users.length + 1, 10);
-  const { email, firstName, lastName, password, address, isAdmin } = req.body;
-  bcrypt.hashSync(password.trim(), 10);
+  const password = bcrypt.hashSync(req.body.password, 10);
+  const { email, firstName, lastName, address, isAdmin } = req.body;
 
-  users.push(req.body);
+  users.push({ id, email, firstName, lastName, password, address, isAdmin });
 
   const payload = {
     email,
@@ -53,6 +53,7 @@ const signup = (req, res) => {
       email,
     },
   });
+  console.log(users);
 };
 
 export default signup;
