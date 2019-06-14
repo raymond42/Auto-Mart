@@ -1,5 +1,4 @@
 /* eslint-disable camelcase */
-/* eslint-disable max-len */
 import cars from '../../models/cars';
 import validateRange from '../../helpers/priceRange';
 

@@ -1,4 +1,3 @@
-/* eslint-disable object-curly-newline */
 import moment from 'moment';
 import ads from '../../models/ads';
 import users from '../../models/users';
@@ -11,8 +10,12 @@ const Ads = (req, res) => {
   }
 
   const id = parseInt(ads.length + 1, 10);
-  const { email, manufacturer, model, price, state, status } = req.body;
-  const newUser = { id, email, manufacturer, model, price, state, status };
+  const {
+    email, manufacturer, model, price, state, status,
+  } = req.body;
+  const newUser = {
+    id, email, manufacturer, model, price, state, status,
+  };
   const user = users.find(e => e.email === email);
   if (!user) {
     return res.status(404).json({
