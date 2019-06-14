@@ -53,7 +53,6 @@ const signup = (req, res) => {
       email,
     },
   });
-  console.log(users);
 };
 
 export default signup;
